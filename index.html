@@ -3,197 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHXB.LU | Lula</title>
-
+<title>Lula (chxb.Lu)</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Prompt',sans-serif;
-}
-
 body{
-    background:#dfeaf6;
-    overflow-x:hidden;
-    position:relative;
+    margin:0;
+    font-family:'Prompt',sans-serif;
+    background:linear-gradient(180deg,#eef7ff,#ffffff);
+    color:#1c2b36;
 }
-
-/* Floating Emoji */
-.floating{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-}
-
-.floating span{
-    position:absolute;
-    bottom:-50px;
-    opacity:0.07;
-    font-size:20px;
-    animation:floatUp linear infinite;
-}
-
-.floating span:nth-child(1){left:5%;animation-duration:40s;}
-.floating span:nth-child(2){left:15%;animation-duration:35s;}
-.floating span:nth-child(3){left:25%;animation-duration:45s;}
-.floating span:nth-child(4){left:35%;animation-duration:38s;}
-.floating span:nth-child(5){left:45%;animation-duration:50s;}
-.floating span:nth-child(6){left:55%;animation-duration:42s;}
-.floating span:nth-child(7){left:65%;animation-duration:37s;}
-.floating span:nth-child(8){left:75%;animation-duration:48s;}
-
-@keyframes floatUp{
-    from{transform:translateY(0);}
-    to{transform:translateY(-120vh);}
-}
-
-/* Layout */
 .container{
-    max-width:1100px;
+    max-width:1000px;
     margin:auto;
-    padding:80px 20px;
-    position:relative;
-    z-index:2;
+    padding:60px 20px;
 }
-
-.hero{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.hero h1{
-    font-size:64px;
-    letter-spacing:2px;
-}
-
-.hero p{
-    color:#5a8ecb;
-    font-size:20px;
-}
-
-.block{
+.card{
     background:#ffffff;
-    padding:40px;
-    margin-bottom:80px;
-    border-radius:10px;
-    position:relative;
+    border-radius:20px;
+    padding:50px;
+    box-shadow:0 10px 30px rgba(74,168,255,0.15);
 }
-
-/* Label style */
-.label-black{
-    position:absolute;
-    top:-25px;
-    left:0;
-    background:#000;
-    color:#fff;
-    padding:10px 25px;
-    font-weight:500;
+h1{
+    margin:0;
+    font-size:42px;
+    color:#4aa8ff;
 }
-
-.label-blue{
-    position:absolute;
-    top:15px;
-    left:0;
-    background:#6ea1d9;
-    color:#fff;
-    padding:8px 20px;
-    font-size:14px;
-}
-
-.content{
-    margin-top:40px;
-    line-height:1.9;
+.subtitle{
+    margin-top:8px;
     font-size:18px;
+    color:#6aaeff;
 }
-
-.content p{
-    margin-bottom:15px;
+.section{
+    margin-top:50px;
 }
-
-.image{
-    margin-top:30px;
+.section h2{
+    font-size:24px;
+    margin-bottom:20px;
 }
-
-.image img{
+ul, ol{
+    line-height:1.9;
+    padding-left:20px;
+}
+.image-box{
+    margin-top:20px;
+}
+.image-box img{
     width:100%;
-    border-radius:8px;
+    border-radius:16px;
 }
 
-.footer{
-    text-align:center;
-    font-size:14px;
-    margin-top:40px;
+/* ปุ่มสถานะกระพริบ */
+.status{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:30px;
+    background:#2ecc71;
+    color:white;
+    font-weight:600;
+    animation:blink 1.5s infinite;
+}
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0.4;}
+    100%{opacity:1;}
 }
 </style>
 </head>
-
 <body>
 
-<div class="floating">
-<span>🩵</span>
-<span>💙</span>
-<span>🤍</span>
-<span>✨</span>
-<span>🌟</span>
-<span>🫧</span>
-<span>☁️</span>
-<span>🌸</span>
-</div>
-
 <div class="container">
+<div class="card">
 
-<div class="hero">
-<h1>CHXB.LU</h1>
-<p>Lula | chxb.lu</p>
+<h1>Lula (chxb.Lu)</h1>
+<div class="subtitle">รับออกแบบลายน้ำ</div>
+
+<div class="status">🟢 เปิดรับงานอยู่นะคะ ✨</div>
+
+<div class="section">
+<h2>🌷 บริการเพิ่มเติม</h2>
+<p>
+🎨 ออกแบบสำหรับ CMS<br>
+ทางร้านออกแบบแนว “โอมากาเสะ” สามารถรีฟของตกแต่ง หรือสีต่างๆ ที่อยากให้วางลงได้ค่ะ 
+หรือแนวธีมงานก็ได้ แต่ไม่ยากจนเกินไป ทางร้านถนัดแนวน่ารักๆ 🌊
+</p>
 </div>
 
-<!-- YCH -->
-<div class="block">
-<div class="label-black">YCH ( V.1-8 )</div>
-<div class="label-blue">รายละเอียดการบรีฟ</div>
-
-<div class="content">
-<p>- แจ้ง Ver.ของลายน้ำ (V.1-8) ว่าสนใจแบบไหน? หากจบแบบที่สนใจมาด้วย ยิ่งดีเลยค่ะ ✨ </p>
-<p>- กรณีต้องการเพิ่มของตกแต่งอย่างอื่น นอกเหนือจากตัวอย่างที่ในแต่ละ Ver. บวกเพิ่ม อย่างละ 5 ฿ / 1 ชิ้น ค่ะ</p>
-<p>- ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ ได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ สามารถแจ้งได้ว่าคำไหนจัดวางแบบไหน หรือคำไหนตัวใหญ่หรือตัวเล็ก</p>
-<p>- โทนสี ที่ต้องการ หากลูกค้ามีเรฟสีสามารถแนบเรฟสีมาได้เลยค่ะ 🧵 </p>
-<p>- การลงสีรบกวนลูกค้าแจ้งด้วยว่า อยากได้การลงแบบไล่สี หรือ ระบายแยกสีแต่ละสีในทีละจุดสลับกัน</p>
-<p>- ระยะเวลาในการทำงาน 1-2 วัน/งาน</p>
+<div class="section">
+<h2>📩 ติดต่อร้านค้า</h2>
+<ul>
+<li>Facebook : Lula</li>
+<li>IG : chxb.lula</li>
+<li>X (Twitter) : @LalaChxb</li>
+</ul>
 </div>
 
-<div class="image">
-<img src="87590762-D07E-4FDF-86ED-5BBB18533848.jpeg">
+<div class="section">
+<h2>📝 ขั้นตอนการสั่งงาน</h2>
+<ol>
+<li>ติดต่อร้านผ่าน Facebook / IG / X ตามช่องทางด้านล่าง</li>
+<li>แจ้งประเภทที่ต้องการ — YCH (V.1–8) หรือ CMS พร้อมส่งรูปอ้างอิงลายเส้นที่ชื่นชอบ</li>
+<li>บรีฟรายละเอียด: ชื่อ / ข้อความ / โทนสี / ของตกแต่ง / การจัดวาง</li>
+<li>ชำระเงิน และรอรับงานภายใน 1–2 วัน/งาน 🎉</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>✨ เงื่อนไขการรับงาน</h2>
+<ul>
+<li>ระยะเวลาในการทำงาน 1–2 วัน/งาน</li>
+<li>ของตกแต่งเพิ่มเติมนอกเหนือจากตัวอย่างที่ให้ไว้ บวกเพิ่มอย่างละ 5 ฿ / 1 ชิ้น</li>
+<li>สามารถใส่ชื่อ/ข้อความได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ</li>
+<li>หากมีเรฟ สามารถแนบเรฟมาได้เลยค่ะ</li>
+<li>การลงสีรบกวนแจ้งว่าต้องการแบบใส่สี หรือระบายแยกสีแต่ละสีให้ตัดสลับกัน</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>📂 รายละเอียดการบรีฟงาน</h2>
+<p>รายละเอียดการบรีฟสำหรับลายน้ำแต่ละประเภท</p>
+<ul>
+<li>YCH (V.1–8)</li>
+<li>CMS</li>
+</ul>
+
+<div class="image-box">
+<img src="banner1.jpg" alt="รายละเอียดบรีฟ YCH">
+</div>
+
+<div class="image-box">
+<img src="banner2.jpg" alt="รายละเอียดบรีฟ CMS">
+</div>
+
+</div>
+
 </div>
 </div>
 
-<!-- CMS -->
-<div class="block">
-<div class="label-black">CMS</div>
-<div class="label-blue">รายละเอียดการบรีฟ</div>
-
-<div class="content">
-<p>- แจ้ง ส่งภาพลายน้ำมาแจ้ง ว่าสนใจแบบไหน?</p>
-<p>- ทางร้านออกแบบ 'โอมากาเสะ' สามารถบรีฟของตกแต่ง หรือสิ่งต่างๆที่อยากให้วาดลงได้ค่ะ หรือแนวธีมงานก็ได้ แต่ไม่ยากจนเกินไป ทางร้านถนัดแนวน่ารักๆ</p>
-<p>- ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ ได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ สามารถแจ้งได้ว่าคำไหนจัดวางแบบไหน หรือคำไหนตัวใหญ่หรือตัวเล็ก</p>
-<p>- โทนสี ที่ต้องการ หากลูกค้ามีเรฟสีสามารถแนบเรฟสีมาได้เลยค่ะ</p>
-<p>- ระยะเวลาในการทำงาน 1-2 วัน/งาน</p>
-</div>
-
-<div class="image">
-<img src="459F6BEE-9466-4674-9D66-9BAA2674DB82.jpeg">
-</div>
-</div>
-
-<div class="footer">
-Contact : Facebook : Lula | IG : chxb.lula | X : @LalaChxb<br><br>
-This is the work of Lula Shop. Do not claim or steal the work. Every work has an owner.<br>
-Thank you for your support from our lovely customers. Wishing you happiness forever.
-</div>
-
-</div>
 </body>
 </html>
