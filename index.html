@@ -4,86 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lula (chxb.Lu)</title>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body{
     margin:0;
     font-family:'Prompt',sans-serif;
-    background:linear-gradient(180deg,#eef7ff,#ffffff);
-    color:#1c2b36;
-}
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:60px 20px;
-}
-.card{
-    background:#ffffff;
-    border-radius:20px;
-    padding:50px;
-    box-shadow:0 10px 30px rgba(74,168,255,0.15);
-}
-h1{
-    margin:0;
-    font-size:42px;
-    color:#4aa8ff;
-}
-.subtitle{
-    margin-top:8px;
-    font-size:18px;
-    color:#6aaeff;
-}
-.section{
-    margin-top:50px;
-}
-.section h2{
-    font-size:24px;
-    margin-bottom:20px;
-}
-ul, ol{
-    line-height:1.9;
-    padding-left:20px;
-}
-.image-box{
-    margin-top:20px;
-}
-.image-box img{
-    width:100%;
-    border-radius:16px;
+    background: radial-gradient(circle at 50% 20%, #dff4ff 0%, #eef8ff 40%, #ffffff 100%);
+    color:#24323f;
 }
 
-/* ปุ่มสถานะกระพริบ */
-.status{
+/* กล่องหลักลอยกลางจอ */
+.wrapper{
+    max-width:820px;
+    margin:80px auto;
+    padding:0 20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    border-radius:40px;
+    padding:60px;
+    box-shadow:0 30px 80px rgba(74,168,255,0.15);
+}
+
+/* หัวเว็บ */
+h1{
+    font-size:46px;
+    margin:0;
+    background:linear-gradient(90deg,#6ec6ff,#3fa9ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    margin-top:12px;
+    color:#6aaeff;
+    font-size:18px;
+}
+
+/* กล่องสถานะเส้นประ */
+.status-box{
+    margin-top:40px;
+    padding:30px;
+    border-radius:25px;
+    border:2px dashed #9fd6ff;
+    text-align:center;
+    background:#f4fbff;
+}
+
+.status-pill{
     display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    border-radius:30px;
-    background:#2ecc71;
+    padding:12px 28px;
+    border-radius:40px;
+    background:linear-gradient(90deg,#32d27b,#2ecc71);
     color:white;
     font-weight:600;
     animation:blink 1.5s infinite;
 }
+
 @keyframes blink{
     0%{opacity:1;}
-    50%{opacity:0.4;}
+    50%{opacity:0.5;}
     100%{opacity:1;}
+}
+
+/* section */
+.section{
+    margin-top:60px;
+}
+
+.section h2{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+ul,ol{
+    line-height:1.9;
+    padding-left:20px;
+}
+
+/* กล่องรูป */
+.image-box{
+    margin-top:25px;
+}
+
+.image-box img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="wrapper">
 <div class="card">
 
 <h1>Lula (chxb.Lu)</h1>
 <div class="subtitle">รับออกแบบลายน้ำ</div>
 
-<div class="status">🟢 เปิดรับงานอยู่นะคะ ✨</div>
+<div class="status-box">
+    <div class="status-pill">🟢 เปิดรับงานอยู่นะคะ ✨</div>
+    <div style="margin-top:10px;color:#6b8ca5;">ดูตัวอย่างงานก่อนสั่งได้เลยค่ะ 💖</div>
+</div>
 
 <div class="section">
 <h2>🌷 บริการเพิ่มเติม</h2>
 <p>
-🎨 ออกแบบสำหรับ CMS<br>
+🎨 ออกแบบสำหรับ CMS<br><br>
 ทางร้านออกแบบแนว “โอมากาเสะ” สามารถรีฟของตกแต่ง หรือสีต่างๆ ที่อยากให้วางลงได้ค่ะ 
 หรือแนวธีมงานก็ได้ แต่ไม่ยากจนเกินไป ทางร้านถนัดแนวน่ารักๆ 🌊
 </p>
@@ -121,11 +152,6 @@ ul, ol{
 
 <div class="section">
 <h2>📂 รายละเอียดการบรีฟงาน</h2>
-<p>รายละเอียดการบรีฟสำหรับลายน้ำแต่ละประเภท</p>
-<ul>
-<li>YCH (V.1–8)</li>
-<li>CMS</li>
-</ul>
 
 <div class="image-box">
 <img src="banner1.jpg" alt="รายละเอียดบรีฟ YCH">
