@@ -1,147 +1,336 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lula (chxb.Lu) | Commission</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lula (chxb.lu) - รับออกแบบลายน้ำ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Mitr', sans-serif;
+            background: linear-gradient(160deg, #e3f2fd 0%, #f3f9ff 50%, #ffffff 100%);
+            min-height: 100vh;
+            color: #5a7fcd;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-<style>
-:root{
-  --blue1:#eaf6ff;
-  --blue2:#cfe9ff;
-  --blue3:#9fd3ff;
-  --blue4:#5bb8ff;
-  --white:#ffffff;
-  --glass:rgba(255,255,255,0.6);
-}
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #5a7fcd;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Mitr',sans-serif;
-}
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
 
-body{
-  background:linear-gradient(135deg,var(--blue1),var(--blue2));
-  min-height:100vh;
-  padding:30px 15px;
-  color:#1a2b3c;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeUp 0.8s ease-out;
+        }
 
-.container{
-  max-width:900px;
-  margin:auto;
-}
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.card{
-  background:var(--glass);
-  backdrop-filter:blur(14px);
-  border-radius:22px;
-  padding:28px;
-  margin-bottom:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
+        .glass-card {
+            background: rgba(255, 255, 255, 0.74);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 22px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(90, 127, 205, 0.15);
+            animation: float 6s ease-in-out infinite;
+        }
 
-.header{
-  text-align:center;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
 
-.shop-name{
-  font-size:36px;
-  font-weight:600;
-  color:#1b4d7a;
-}
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-.subtitle{
-  font-size:18px;
-  color:#3b6f94;
-  margin-top:6px;
-}
+        h1 {
+            font-size: 2.8em;
+            font-weight: 600;
+            background: linear-gradient(135deg, #5a7fcd, #90caf9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
 
-.desc{
-  margin-top:12px;
-  font-size:16px;
-  color:#355b78;
-}
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #5a7fcd;
+        }
 
-.section-title{
-  font-size:20px;
-  margin-bottom:14px;
-  font-weight:500;
-  color:#1b4d7a;
-}
+        .status-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #5a7fcd, #90caf9);
+            color: white;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.2em;
+            box-shadow: 0 8px 24px rgba(90, 127, 205, 0.4);
+            animation: glow 2s ease-in-out infinite;
+        }
 
-.step-box{
-  background:rgba(255,255,255,0.75);
-  padding:16px;
-  border-radius:16px;
-  margin-bottom:12px;
-}
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 8px 24px rgba(90, 127, 205, 0.4); }
+            50% { box-shadow: 0 8px 32px rgba(90, 127, 205, 0.6); }
+        }
 
-.image-box img{
-  width:100%;
-  border-radius:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  margin-bottom:14px;
-}
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #5a7fcd;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.footer{
-  text-align:center;
-  font-size:14px;
-  color:#4d6d85;
-  padding-top:10px;
-}
+        h2::before {
+            content: '✦';
+            color: #90caf9;
+        }
 
-@media(max-width:600px){
-  .shop-name{font-size:28px;}
-  .card{padding:20px;}
-}
-</style>
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            position: relative;
+            padding-left: 60px;
+            font-weight: 400;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #5a7fcd, #90caf9);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(90, 127, 205, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-image:hover {
+            transform: scale(1.02);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #5a7fcd, #90caf9);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(90, 127, 205, 0.4);
+            transition: all 0.3s ease;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(90, 127, 205, 0.6);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-weight: 300;
+            color: #5a7fcd;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #5a7fcd;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 400;
+        }
+
+        .footer-links a:hover {
+            color: #90caf9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .glass-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Sparkles -->
+    <div class="sparkle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="left: 85%; top: 15%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 50%; top: 40%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="left: 20%; top: 70%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="left: 75%; top: 60%; animation-delay: 0.5s;"></div>
 
-<div class="container">
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Lula</h1>
+            <p class="subtitle">chxb.lu | รับออกแบบลายน้ำ</p>
+        </div>
 
-  <!-- Header -->
-  <div class="card header">
-    <div class="shop-name">Lula (chxb.Lu)</div>
-    <div class="subtitle">☁️ Watermark Design Commission ☁️</div>
-    <div class="desc">รับออกแบบลายน้ำ</div>
-  </div>
+        <!-- สถานะรับงาน -->
+        <div class="glass-card" style="text-align: center; animation-delay: 0.1s;">
+            <span class="status-badge">✦ เปิดรับงาน ✦</span>
+            <p style="margin-top: 15px; font-size: 0.95em;">ระยะเวลาในการทำงาน <strong>1-2 วัน/งาน</strong></p>
+        </div>
 
-  <!-- ขั้นตอน -->
-  <div class="card">
-    <div class="section-title">📝 ขั้นตอนการสั่งงาน</div>
+        <!-- ขั้นตอนการสั่งงาน -->
+        <div class="glass-card" style="animation-delay: 0.2s;">
+            <h2>ขั้นตอนการสั่งงาน</h2>
+            <ol class="steps-list">
+                <li>ติดต่อทาง DM เพื่อแจ้งความประสงค์</li>
+                <li>เลือกประเภทงาน (YCH หรือ CMS)</li>
+                <li>บริฟรายละเอียดที่ต้องการ (ตามรูปด้านล่าง)</li>
+                <li>รับใบเสนอราคาและเงื่อนไข</li>
+                <li>ชำระเงินตามที่ตกลง</li>
+                <li>รอรับงานภายใน 1-2 วัน</li>
+                <li>รับไฟล์งานเต็มรูปแบบ</li>
+            </ol>
+        </div>
 
-    <div class="step-box">1️⃣ ทักแชทเพื่อแจ้งว่าต้องการลายน้ำแบบ YCH หรือ CMS</div>
-    <div class="step-box">2️⃣ ส่งรายละเอียดการบรีฟตามตัวอย่างด้านล่าง</div>
-    <div class="step-box">3️⃣ รอร้านสรุปแบบและแจ้งระยะเวลา (1-2 วัน/งาน)</div>
-  </div>
+        <!-- รายละเอียดการบริฟงาน -->
+        <div class="glass-card" style="animation-delay: 0.3s;">
+            <h2>รายละเอียดการบริฟงาน</h2>
+            
+            <div class="info-section">
+                <h3 style="color: #5a7fcd; font-size: 1.4em; margin-bottom: 15px;">✦ CMS</h3>
+                <img src="/mnt/user-data/uploads/cfbcaa0068aec088e703fe40359cece3.jpeg" alt="CMS รายละเอียดการบริฟ" class="info-image">
+            </div>
 
-  <!-- รายละเอียดบรีฟ -->
-  <div class="card">
-    <div class="section-title">📎 รายละเอียดการบรีฟงาน ลายน้ำ YCH & CMS</div>
+            <div class="info-section">
+                <h3 style="color: #5a7fcd; font-size: 1.4em; margin-bottom: 15px;">✦ YCH (V.1-8)</h3>
+                <img src="/mnt/user-data/uploads/529ce901b40544091239d722da345093.jpeg" alt="YCH รายละเอียดการบริฟ" class="info-image">
+            </div>
+        </div>
 
-    <div class="image-box">
-      <img src="REPLACE_IMAGE_1_HERE">
-      <img src="REPLACE_IMAGE_2_HERE">
+        <!-- CTA Button -->
+        <a href="#" class="cta-button">✦ ติดต่อสั่งงานเลย ✦</a>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Lula (chxb.lu)</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">This is the work of Lula Shop. Do not claim or steal the work.</p>
+            <p style="font-size: 0.9em;">Every work has an owner. Thank you for your support from our lovely customers.</p>
+            <p style="font-size: 0.9em;">Wishing you happiness forever.</p>
+            <div class="footer-links">
+                <a href="#">Facebook: Lula</a>
+                <a href="#">IG: chxb.lula</a>
+                <a href="#">X: @LalaChxb</a>
+            </div>
+        </div>
     </div>
 
-    <div style="font-size:14px;color:#547a97;">
-      กรุณาอ่านรายละเอียดในภาพให้ครบก่อนบรีฟงานนะคะ 💙
-    </div>
-  </div>
+    <script>
+        // เพิ่ม sparkle แบบสุ่ม
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
 
-  <!-- Footer -->
-  <div class="footer">
-    © Lula (chxb.Lu) — All rights reserved.
-  </div>
+        setInterval(createSparkle, 600);
 
-</div>
+        // เพิ่ม animation เมื่อ scroll
+        const cards = document.querySelectorAll('.glass-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
 
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
+```
