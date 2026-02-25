@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lula | chxb.lu</title>
+<title>CHXB.LU | Lula</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
@@ -12,221 +12,183 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Prompt', sans-serif;
+    font-family:'Prompt',sans-serif;
 }
 
 body{
-    background: linear-gradient(to bottom, #f8fbff, #eaf4ff);
-    color:#1c2b3a;
+    background:#eaf2fb;
+    color:#000;
     overflow-x:hidden;
     position:relative;
 }
 
 /* Floating Background */
-.floating{
+.floating-bg{
     position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
+    inset:0;
     overflow:hidden;
-    z-index:0;
     pointer-events:none;
+    z-index:0;
 }
 
-.floating span{
+.floating-bg span{
     position:absolute;
-    font-size:20px;
-    opacity:0.08;
-    animation:floatUp 25s linear infinite;
+    bottom:-50px;
+    font-size:18px;
+    opacity:0.07;
+    animation:floatUp linear infinite;
 }
+
+.floating-bg span:nth-child(1){ left:5%; animation-duration:35s; font-size:16px;}
+.floating-bg span:nth-child(2){ left:15%; animation-duration:40s; font-size:22px;}
+.floating-bg span:nth-child(3){ left:25%; animation-duration:32s;}
+.floating-bg span:nth-child(4){ left:35%; animation-duration:38s; font-size:20px;}
+.floating-bg span:nth-child(5){ left:45%; animation-duration:42s;}
+.floating-bg span:nth-child(6){ left:55%; animation-duration:36s; font-size:17px;}
+.floating-bg span:nth-child(7){ left:65%; animation-duration:44s;}
+.floating-bg span:nth-child(8){ left:75%; animation-duration:39s;}
+.floating-bg span:nth-child(9){ left:85%; animation-duration:37s;}
+.floating-bg span:nth-child(10){ left:50%; animation-duration:41s;}
+.floating-bg span:nth-child(11){ left:30%; animation-duration:33s;}
+.floating-bg span:nth-child(12){ left:70%; animation-duration:45s;}
 
 @keyframes floatUp{
-    from{ transform:translateY(100vh);}
-    to{ transform:translateY(-10vh);}
+    from{ transform:translateY(0);}
+    to{ transform:translateY(-120vh);}
 }
 
-/* Section */
 section{
+    max-width:1100px;
+    margin:auto;
     padding:60px 20px;
     position:relative;
-    z-index:1;
-    max-width:1000px;
-    margin:auto;
-}
-
-h1,h2,h3{
-    font-weight:600;
-    color:#2b4f73;
+    z-index:2;
 }
 
 .hero{
     text-align:center;
-    padding-top:80px;
+    padding-top:100px;
 }
 
 .hero h1{
-    font-size:40px;
+    font-size:60px;
     letter-spacing:2px;
 }
 
 .hero p{
-    margin-top:10px;
-    color:#5d7fa3;
+    font-size:20px;
+    color:#5a8ecb;
 }
 
-/* Card */
 .card{
-    background:white;
+    background:#f3f6fa;
+    padding:40px;
     border-radius:18px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom:40px;
+    margin-bottom:60px;
 }
 
-.card h3{
-    margin-bottom:15px;
-    font-size:22px;
+.card h2{
+    margin-bottom:25px;
+    font-size:28px;
 }
 
-.card ul{
-    padding-left:20px;
+ul{
+    line-height:1.9;
+    font-size:18px;
 }
 
-.card li{
-    margin-bottom:10px;
-    line-height:1.6;
+.image{
+    margin-top:30px;
 }
 
-.notice{
-    margin-top:15px;
-    color:#2f6db3;
-    font-weight:500;
-}
-
-.image-box{
-    margin-top:20px;
-}
-
-.image-box img{
+.image img{
     width:100%;
-    border-radius:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-.steps li{
-    margin-bottom:12px;
+    border-radius:12px;
 }
 
 .footer{
     text-align:center;
-    padding:40px 20px;
     font-size:14px;
-    color:#6b8cab;
-}
-
-.contact{
-    margin-top:15px;
-    font-weight:500;
-}
-
-@media(min-width:768px){
-    .hero h1{font-size:50px;}
+    padding:40px 20px;
+    position:relative;
+    z-index:2;
 }
 </style>
 </head>
 
 <body>
 
-<div class="floating">
-<span style="left:5%;">🩵</span>
-<span style="left:15%; animation-duration:30s;">💙</span>
-<span style="left:25%; animation-duration:28s;">🤍</span>
-<span style="left:35%; animation-duration:22s;">✨</span>
-<span style="left:45%; animation-duration:26s;">🌟</span>
-<span style="left:55%; animation-duration:32s;">🫧</span>
-<span style="left:65%; animation-duration:24s;">☁️</span>
-<span style="left:75%; animation-duration:29s;">🌸</span>
-<span style="left:85%; animation-duration:27s;">💙</span>
+<!-- Floating Emojis -->
+<div class="floating-bg">
+<span>🩵</span>
+<span>💙</span>
+<span>🤍</span>
+<span>✨</span>
+<span>🌟</span>
+<span>🫧</span>
+<span>☁️</span>
+<span>🌸</span>
+<span>💙</span>
+<span>🩵</span>
+<span>✨</span>
+<span>🫧</span>
 </div>
 
-<!-- Hero -->
 <section class="hero">
     <h1>CHXB.LU</h1>
     <p>Lula | chxb.lu</p>
 </section>
 
-<!-- แนะนำ + ระยะเวลา -->
-<section>
-    <div class="card">
-        <h3>รายละเอียดงานลายน้ำ</h3>
-        <ul>
-            <li>ระยะเวลาในการทำงาน 1-2 วัน/งาน</li>
-            <li>งานออกแบบโทนฟ้า-ขาว แนวคลีน น่ารัก มืออาชีพ</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ประเภทลายน้ำ -->
 <section>
 
-    <div class="card">
-        <h3>ลายน้ำ CMS</h3>
-        <ul>
-            <li>แจ้ง/ส่งภาพลายน้ำมาแจ้งว่าสนใจแบบไหน</li>
-            <li>สามารถบรีฟของตกแต่งหรือแนวงานได้ (ไม่นอกแนวร้านเกินไป)</li>
-            <li>แจ้งชื่อ/ข้อความ (ไทย/อังกฤษ) และขนาดตัวอักษร</li>
-            <li>แจ้งโทนสีที่ต้องการ (มีเรฟแนบได้)</li>
-        </ul>
-        <div class="image-box">
-            <img src="459F6BEE-9466-4674-9D66-9BAA2674DB82.jpeg" alt="CMS Example">
-        </div>
-    </div>
+<div class="card">
+<h2>YCH ( V.1-8 )</h2>
+<p style="background:#6ea1d9;color:white;display:inline-block;padding:8px 16px;border-radius:8px;margin-bottom:20px;">
+รายละเอียดการบรีฟ
+</p>
 
-    <div class="card">
-        <h3>ลายน้ำ YCH (V.1–8)</h3>
-        <ul>
-            <li>แจ้ง Ver. (V.1-8) ที่สนใจ</li>
-            <li>เพิ่มของตกแต่งนอกเหนือจากตัวอย่าง บวกเพิ่ม 5 บาท / 1 ชิ้น</li>
-            <li>แจ้งชื่อ/ข้อความ (ไทย/อังกฤษ) และรูปแบบการจัดวาง</li>
-            <li>เลือกแบบลงสี: ไล่สี หรือ แยกสีทีละจุดสลับกัน</li>
-        </ul>
-        <div class="image-box">
-            <img src="87590762-D07E-4FDF-86ED-5BBB18533848.jpeg" alt="YCH Example">
-        </div>
-    </div>
+<ul>
+<li>แจ้ง Ver.ของลายน้ำ (V.1-8) ว่าสนใจแบบไหน? หากจบแบบที่สนใจมาด้วย ยิ่งดีเลยค่ะ</li>
+<li>กรณีต้องการเพิ่มของตกแต่งอย่างอื่น นอกเหนือจากตัวอย่างที่ในแต่ละ Ver. บวกเพิ่ม อย่างละ 5 ฿ / 1 ชิ้น ค่ะ</li>
+<li>ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ ได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ สามารถแจ้งได้ว่าคำไหนจัดวางแบบไหน หรือคำไหนตัวใหญ่หรือตัวเล็ก</li>
+<li>โทนสี ที่ต้องการ หากลูกค้ามีเรฟสีสามารถแนบเรฟสีมาได้เลยค่ะ</li>
+<li>การลงสีรบกวนลูกค้าแจ้งด้วยว่า อยากได้การลงแบบไล่สี หรือ ระบายแยกสีแต่ละสีในทีละจุดสลับกัน</li>
+<li>ระยะเวลาในการทำงาน 1-2 วัน/งาน</li>
+</ul>
 
-</section>
-
-<!-- ขั้นตอน -->
-<section>
-    <div class="card">
-        <h3>ขั้นตอนการสั่งงาน</h3>
-        <ul class="steps">
-            <li>1. แจ้งประเภทงาน (CMS หรือ YCH)</li>
-            <li>2. ส่งรายละเอียดบรีฟครบถ้วน</li>
-            <li>3. รอออกแบบ 1-2 วัน</li>
-            <li>4. ส่งงานและตรวจสอบความเรียบร้อย</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ติดต่อ -->
-<section>
-    <div class="card">
-        <h3>ช่องทางติดต่อ</h3>
-        <div class="contact">
-            Facebook : Lula<br>
-            IG : chxb.lula<br>
-            X : @LalaChxb
-        </div>
-    </div>
-</section>
-
-<div class="footer">
-This is the work of Lula Shop. Do not claim or steal the work.  
-Every work has an owner. Thank you for your support.
+<div class="image">
+<img src="87590762-D07E-4FDF-86ED-5BBB18533848.jpeg" alt="YCH">
 </div>
+
+</div>
+
+<div class="card">
+<h2>CMS</h2>
+<p style="background:#6ea1d9;color:white;display:inline-block;padding:8px 16px;border-radius:8px;margin-bottom:20px;">
+รายละเอียดการบรีฟ
+</p>
+
+<ul>
+<li>แจ้ง ส่งภาพลายน้ำมาแจ้ง ว่าสนใจแบบไหน?</li>
+<li>ทางร้านออกแบบ 'โอมากาเสะ' สามารถบรีฟของตกแต่ง หรือสิ่งต่างๆที่อยากให้วาดลงได้ค่ะ หรือแนวธีมงานก็ได้ แต่ไม่ยากจนเกินไป ทางร้านถนัดแนวน่ารักๆ</li>
+<li>ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ ได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ สามารถแจ้งได้ว่าคำไหนจัดวางแบบไหน หรือคำไหนตัวใหญ่หรือตัวเล็ก</li>
+<li>โทนสี ที่ต้องการ หากลูกค้ามีเรฟสีสามารถแนบเรฟสีมาได้เลยค่ะ</li>
+<li>ระยะเวลาในการทำงาน 1-2 วัน/งาน</li>
+</ul>
+
+<div class="image">
+<img src="459F6BEE-9466-4674-9D66-9BAA2674DB82.jpeg" alt="CMS">
+</div>
+
+</div>
+
+</section>
+
+<section class="footer">
+Contact : Facebook : Lula | IG : chxb.lula | X : @LalaChxb<br><br>
+This is the work of Lula Shop. Do not claim or steal the work. Every work has an owner.<br>
+Thank you for your support from our lovely customers. Wishing you happiness forever.
+</section>
 
 </body>
 </html>
