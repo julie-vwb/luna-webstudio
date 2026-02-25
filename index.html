@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lula | Dreamy Commission</title>
+<title>CHXB.LU | YCH</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --primary:#6ec6ff;
-  --soft:#a8e0ff;
-  --text:#2c4b66;
+  --blue1:#e6f4ff;
+  --blue2:#cde9ff;
+  --accent:#6bb6f0;
+  --deep:#2c5576;
 }
 
 *{
@@ -22,243 +23,214 @@
 }
 
 body{
-  min-height:100vh;
-  background:linear-gradient(180deg,#dff3ff,#cde9ff);
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff55 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, #ffffff44 0%, transparent 40%),
+    linear-gradient(180deg,var(--blue1),var(--blue2));
+  display:flex;
+  justify-content:center;
+  padding:60px 20px;
   overflow-x:hidden;
-  color:var(--text);
-  position:relative;
 }
 
-/* DREAMY BLOBS */
-body::before,
+/* floating sparkles */
 body::after{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.6;
-  z-index:-1;
-  animation:float 18s infinite ease-in-out alternate;
-}
-
-body::before{
-  background:#9ddcff;
-  top:-100px;
-  left:-150px;
-}
-
-body::after{
-  background:#bde9ff;
-  bottom:-150px;
-  right:-150px;
-  animation-delay:6s;
+  content:"✨ 🫧 💙 ✨";
+  position:fixed;
+  font-size:40px;
+  top:10%;
+  right:5%;
+  opacity:.15;
+  animation:float 12s ease-in-out infinite alternate;
 }
 
 @keyframes float{
-  from{transform:translateY(0px);}
+  from{transform:translateY(0);}
   to{transform:translateY(60px);}
 }
 
-/* SPARKLES */
-.sparkle{
-  position:fixed;
-  width:6px;
-  height:6px;
-  background:white;
-  border-radius:50%;
-  box-shadow:0 0 10px white;
-  animation:twinkle 4s infinite alternate;
-  opacity:.8;
-}
-
-@keyframes twinkle{
-  from{opacity:.3; transform:scale(.8);}
-  to{opacity:1; transform:scale(1.3);}
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-/* GLASS CARD */
-.card{
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(25px);
-  -webkit-backdrop-filter:blur(25px);
-  border-radius:35px;
-  padding:40px;
-  margin-bottom:40px;
+.poster{
+  position:relative;
+  background:linear-gradient(180deg,#ffffff,#f2f8ff);
+  max-width:1150px;
+  width:100%;
+  border-radius:25px;
+  padding:50px;
   box-shadow:
-    0 25px 60px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.7);
-  border:1px solid rgba(255,255,255,0.5);
-  animation:fadeUp .8s ease forwards;
+    0 40px 80px rgba(0,0,0,.12),
+    inset 0 0 80px #ffffffaa;
+  overflow:hidden;
 }
 
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+/* watermark */
+.poster::before{
+  content:"CHXB.LU";
+  position:absolute;
+  font-size:140px;
+  font-weight:600;
+  color:#6bb6f015;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(-15deg);
+  pointer-events:none;
 }
 
-h1{
+/* LOGO */
+.logo{
   text-align:center;
-  font-size:42px;
-  margin-bottom:10px;
+  margin-bottom:40px;
 }
 
-.subtitle{
-  text-align:center;
-  opacity:.7;
-  margin-bottom:30px;
+.logo h1{
+  font-size:72px;
+  letter-spacing:4px;
+  color:var(--deep);
+  text-shadow:0 10px 25px #6bb6f050;
 }
 
-/* BUTTONS */
-.button{
-  display:inline-block;
-  padding:16px 35px;
-  border-radius:50px;
-  background:linear-gradient(135deg,#7ed4ff,#58b9f3);
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  box-shadow:0 15px 40px rgba(90,170,230,0.4);
-  transition:.4s ease;
-  margin:10px;
+.logo span{
+  color:var(--accent);
+  font-size:24px;
 }
 
-.button:hover{
-  transform:translateY(-6px) scale(1.05);
-  box-shadow:0 20px 50px rgba(90,170,230,0.6);
-}
-
-.outline{
-  background:transparent;
-  border:2px solid var(--primary);
-  color:var(--primary);
-  box-shadow:none;
-}
-
-.outline:hover{
-  background:rgba(255,255,255,0.5);
-}
-
-/* SECTION */
-.section-title{
-  font-size:22px;
-  margin-bottom:20px;
-  padding-left:12px;
-  border-left:6px solid var(--primary);
-}
-
-.status{
-  text-align:center;
-  font-size:18px;
-}
-
-.grid{
+/* layout */
+.content{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+  grid-template-columns: 420px 1fr;
+  gap:50px;
 }
 
-.work-box{
-  background:rgba(255,255,255,0.5);
-  border-radius:30px;
-  padding:30px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  transition:.4s ease;
+/* LEFT */
+.left{
+  position:relative;
 }
 
-.work-box:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+.left img{
+  width:100%;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.25));
 }
 
-.contact{
-  text-align:center;
-  line-height:1.8;
+/* tags */
+.tag-black{
+  position:absolute;
+  top:0;
+  left:0;
+  background:black;
+  color:white;
+  padding:14px 22px;
+  font-size:22px;
+}
+
+.tag-blue{
+  position:absolute;
+  top:60px;
+  left:0;
+  background:var(--accent);
+  color:white;
+  padding:12px 22px;
+  font-size:20px;
+}
+
+/* RIGHT */
+.right{
+  font-size:22px;
+  line-height:1.9;
+  color:#333;
+}
+
+.right h2{
+  font-weight:500;
+  margin-bottom:20px;
+}
+
+.item{
+  margin-bottom:18px;
+  padding-bottom:18px;
+  border-bottom:1px dashed #c9e5ff;
+}
+
+.blue{
+  color:var(--accent);
+  font-weight:500;
 }
 
 .footer{
+  margin-top:50px;
   text-align:center;
-  margin-top:30px;
   font-size:14px;
-  opacity:.6;
+  color:#6b8aa6;
+  opacity:.85;
 }
 
-@media(max-width:768px){
-  .grid{
+/* responsive */
+@media(max-width:950px){
+  .content{
     grid-template-columns:1fr;
   }
-  h1{font-size:32px;}
+  .logo h1{
+    font-size:50px;
+  }
+  .right{
+    font-size:18px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- sparkles -->
-<div class="sparkle" style="top:15%;left:20%;animation-delay:1s;"></div>
-<div class="sparkle" style="top:30%;left:80%;animation-delay:2s;"></div>
-<div class="sparkle" style="top:60%;left:10%;animation-delay:3s;"></div>
-<div class="sparkle" style="top:75%;left:70%;animation-delay:4s;"></div>
+<div class="poster">
 
-<div class="container">
-
-<div class="card">
-  <h1>☁ Lula ☁</h1>
-  <div class="subtitle">chxb.Lu</div>
-  <div style="text-align:center;">
-    <a class="button" href="#">🎨 รับออกแบบลายน้ำ</a>
-    <a class="button outline" href="#">Watermark Design</a>
+  <div class="logo">
+    <h1>CHXB.LU</h1>
+    <span>💙 Lula | chxb.lu 💙</span>
   </div>
-</div>
 
-<div class="card">
-  <div class="section-title">สถานะรับงาน</div>
-  <div class="status">🟢 เปิดรับงานอยู่นะคะ สามารถดูรายละเอียดเพิ่มเติมได้เลยค่า ✨</div>
-</div>
+  <div class="content">
 
-<div class="card">
-  <div class="section-title">รายละเอียดการรับงาน</div>
-  <div class="grid">
-    <div class="work-box">
-      <h3>YCH (V.1-8)</h3>
-      <p>แจ้งเวอร์ชันที่ต้องการ<br>ระยะเวลา 1–2 วัน</p>
+    <div class="left">
+      <div class="tag-black">✨ YCH ( V.1-8 )</div>
+      <div class="tag-blue">🫧 รายละเอียดการรับฟ</div>
+      <img src="images/character.png" alt="character">
     </div>
-    <div class="work-box">
-      <h3>CMS</h3>
-      <p>แจ้งภาพและเรฟที่ต้องการ<br>สามารถเพิ่มข้อความได้</p>
+
+    <div class="right">
+
+      <h2>💬 แจ้ง Ver.ของลายน้ำ (V.1-8) ว่าสนใจแบบไหน?</h2>
+
+      <div class="item blue">
+      ✨ เพิ่มของตกแต่งอื่นนอกเหนือจากตัวอย่างในแต่ละ Ver.  
+      +5฿ / 1 ชิ้น
+      </div>
+
+      <div class="item">
+      🏷️ ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ  
+      แจ้งขนาด ตัวใหญ่/เล็ก หรือรูปแบบการจัดวางได้เลย
+      </div>
+
+      <div class="item">
+      🎨 โทนสีที่ต้องการ สามารถแนบเรฟสีมาได้
+      </div>
+
+      <div class="item blue">
+      🌈 แจ้งรูปแบบการลงสี  
+      ไล่สี / แยกสีทีละจุด
+      </div>
+
+      <div class="item">
+      ⏳ ระยะเวลาในการทำงาน 1-2 วัน/งาน
+      </div>
+
     </div>
+
   </div>
-</div>
 
-<div class="card">
-  <div class="section-title">ติดต่อร้านค้า</div>
-  <div class="contact">
-    Facebook : Lula<br>
-    IG : chxb.lula<br>
-    X : @LalaChxb
+  <div class="footer">
+    💌 Contact : Facebook : Lula | IG : chxb.lula | X : @LalaChxb <br>
+    ✨ This is the work of Lula Shop. Do not claim or steal the work.
   </div>
-</div>
-
-<div class="card contact">
-  <h3>สนใจสั่งงาน ติดต่อได้เลย! 💧</h3>
-  <br>
-  <a class="button" href="#">📩 ติดต่อสั่งงาน</a>
-  <br><br>
-  <a class="button outline" href="https://x.com/LalaChxb" target="_blank">🐦 X : @LalaChxb</a>
-</div>
-
-<div class="footer">
-© Lula | chxb.Lu · Thank you for your support from our lovely customers 💙
-</div>
 
 </div>
+
 </body>
 </html>
