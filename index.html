@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lula (chxb.Lu) - Commission Page</title>
+    <title>Lula (chxb.lu) - Watermark Commission</title>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-pink: #ff5c9d;
             --primary-purple: #c9a8e8;
+            --primary-blue: #7bb9fa;
             --text-color: #8a3a5c;
             --glass-bg: rgba(255, 255, 255, 0.74);
             --glass-border: rgba(255, 180, 220, 0.45);
             --main-gradient: linear-gradient(135deg, #ff85b3, #c97ae8);
+            --blue-gradient: linear-gradient(135deg, #7bb9fa, #a8c9ff);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Mitr', sans-serif; }
@@ -21,9 +23,8 @@
             background: linear-gradient(160deg, #ffd6eb 0%, #f5d6ff 50%, #d6eeff 100%);
             background-attachment: fixed;
             color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         /* Sparkle Animation */
@@ -37,6 +38,7 @@
             position: absolute;
             animation: float 6s infinite ease-in-out;
             opacity: 0.6;
+            color: var(--primary-pink);
         }
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -56,65 +58,55 @@
         .container { max-width: 800px; margin: 0 auto; }
 
         /* 1. Header */
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
+        header { text-align: center; padding: 40px 0; }
         .logo-container {
-            width: 120px;
-            height: 120px;
+            width: 130px; height: 130px;
             margin: 0 auto 20px;
             border-radius: 50%;
-            background: #fff;
+            background: white;
             border: 4px solid var(--primary-pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
             animation: pulse 2s infinite;
-            padding: 10px;
         }
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+        .logo-container img { width: 90%; height: 90%; object-fit: contain; }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 92, 157, 0.4); }
             70% { box-shadow: 0 0 0 15px rgba(255, 92, 157, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 92, 157, 0); }
         }
-        .badge-row { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+        .badge-row { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
         .badge {
-            background: var(--main-gradient);
+            background: var(--blue-gradient);
             color: white;
-            padding: 4px 15px;
+            padding: 5px 18px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
         /* 2. Status */
-        .status-card {
+        .status-bar {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: 22px;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-weight: 500;
         }
         .dot {
             height: 12px; width: 12px;
-            background-color: #00ff88;
+            background-color: #4CAF50;
             border-radius: 50%;
             display: inline-block;
             margin-right: 8px;
-            animation: blink 1s infinite;
+            animation: blink 1.2s infinite;
         }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
-        /* 3-9. Cards */
+        /* General Card Style */
         .card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -124,185 +116,153 @@
             margin-bottom: 25px;
         }
         h2 { 
-            margin-bottom: 20px; 
             font-weight: 600; 
-            color: var(--primary-pink);
-            display: flex;
-            align-items: center;
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            color: var(--text-color);
         }
-        h2::before { content: '🌸'; margin-right: 10px; font-size: 1.2rem; }
+        h2::before { content: '🧵'; margin-right: 12px; }
 
+        /* 3. Price Section */
         .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(138, 58, 92, 0.1);
         }
         .lnk-price {
             background: var(--main-gradient);
             color: white;
-            padding: 2px 12px;
+            padding: 4px 15px;
             border-radius: 20px;
+            font-weight: 500;
             font-size: 0.9rem;
         }
 
-        .brief-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        /* 5. Instruction / Brief Detail */
+        .brief-section { margin-top: 15px; }
+        .brief-title { 
+            background: var(--primary-blue); color: white; 
+            padding: 5px 15px; border-radius: 5px 20px 20px 5px;
+            display: inline-block; margin-bottom: 15px; font-size: 0.95rem;
+            font-weight: 500;
         }
-        .brief-box {
-            background: rgba(255,255,255,0.4);
-            padding: 15px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        .brief-box h4 { color: var(--primary-pink); margin-bottom: 10px; }
+        .brief-content { font-size: 0.95rem; margin-left: 10px; }
+        .brief-content li { list-style: none; margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .brief-content li::before { content: '✨'; position: absolute; left: 0; color: var(--primary-blue); font-size: 0.8rem; }
 
         /* 10. CTA Button */
-        .cta-container { text-align: center; padding: 40px 0; }
-        .btn-main {
+        .cta-section { text-align: center; padding: 40px 0; }
+        .cta-btn {
             background: var(--main-gradient);
             color: white;
-            padding: 15px 45px;
+            padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.2rem;
             display: inline-block;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(255, 133, 179, 0.3);
+            transition: all 0.3s;
             border: none;
-            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 92, 157, 0.2);
+            font-size: 1.2rem;
+            animation: glow 2s infinite ease-in-out;
         }
-        .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(201, 122, 232, 0.6);
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 20px rgba(255, 92, 157, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(201, 168, 232, 0.6); }
         }
+        .cta-btn:hover { transform: scale(1.05); }
 
-        footer { text-align: center; font-size: 0.8rem; opacity: 0.7; padding-bottom: 20px; }
+        footer { text-align: center; padding-bottom: 40px; font-size: 0.85rem; opacity: 0.8; }
 
         @media (max-width: 600px) {
-            .brief-grid { grid-template-columns: 1fr; }
+            .price-item { flex-direction: column; align-items: flex-start; gap: 8px; }
         }
     </style>
 </head>
 <body>
 
     <div class="sparkles">
-        <span class="sparkle" style="top: 10%; left: 10%;">✦</span>
-        <span class="sparkle" style="top: 20%; right: 15%;">🌸</span>
-        <span class="sparkle" style="top: 50%; left: 5%;">✿</span>
-        <span class="sparkle" style="top: 70%; right: 10%;">🎀</span>
-        <span class="sparkle" style="top: 85%; left: 20%;">⋆</span>
-        <span class="sparkle" style="top: 40%; right: 25%;">🌷</span>
+        <span class="sparkle" style="top: 15%; left: 10%;">✦</span>
+        <span class="sparkle" style="top: 25%; right: 12%;">🧵</span>
+        <span class="sparkle" style="top: 45%; left: 8%;">✿</span>
+        <span class="sparkle" style="top: 65%; right: 15%;">🪡</span>
+        <span class="sparkle" style="top: 80%; left: 20%;">⋆</span>
+        <span class="sparkle" style="top: 40%; right: 25%;">🪽</span>
     </div>
 
     <div class="container">
         <header class="fade-up">
             <div class="logo-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23ff5c9d' stroke-width='2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Mitr' font-size='20' fill='%23ff5c9d'%3ELula%3C/text%3E%3C/svg%3E" alt="Lula Logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white' stroke='%23ff5c9d' stroke-width='2'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Mitr' font-size='16' fill='%238a3a5c'%3ELula%3C/text%3E%3C/svg%3E" alt="Lula Logo">
             </div>
-            <h1>Lula (chxb.Lu)</h1>
-            <p>รับออกแบบลายน้ำ</p>
+            <h1>Lula (chxb.lu)</h1>
+            <p style="margin-top: 5px; opacity: 0.9;">รับออกแบบลายน้ำ</p>
             <div class="badge-row">
-                <span class="badge">Graphic Design</span>
-                <span class="badge">Fast Work</span>
+                <span class="badge">Watermark Design</span>
+                <span class="badge">Blue & White Theme</span>
             </div>
         </header>
 
-        <div class="status-card fade-up" style="animation-delay: 0.1s;">
-            <span class="dot"></span> <strong>Status:</strong> Open for Commissions
+        <div class="status-bar fade-up">
+            <span class="dot"></span> <strong>Status:</strong> เปิดรับงาน (Open)
         </div>
 
-        <div class="card fade-up" style="animation-delay: 0.2s;">
-            <h2>ราคาลงสี / Watermark</h2>
+        <div class="card fade-up">
+            <h2>ราคาลายน้ำ / Watermark</h2>
             <div class="price-item">
-                <span>ลายน้ำ YCH (V.1-8)</span>
-                <span class="lnk-price">เริ่มต้น ฿xx</span>
-            </div>
-            <div class="price-item">
-                <span>ลายน้ำ CMS (โอมากาเสะ)</span>
-                <span class="lnk-price">เริ่มต้น ฿xx</span>
+                <span>ลายน้ำ YCH (V.1-8) / CMS</span>
+                <span class="lnk-price">สอบถามเพิ่มเติม</span>
             </div>
             <div class="price-item">
-                <span>เพิ่มของตกแต่งอื่นๆ</span>
-                <span class="lnk-price">+฿5 / 1 ชิ้น</span>
+                <span>เพิ่มของตกแต่ง (นอกเหนือจากตัวอย่าง)</span>
+                <span class="lnk-price">+ 5 ฿ / 1 ชิ้น</span>
             </div>
         </div>
 
-        <div class="card fade-up" style="animation-delay: 0.3s;">
-            <h2>กลุ่มลายเส้น</h2>
-            <div class="brief-grid">
-                <div class="brief-box">
-                    <h4>กลุ่มฟรี</h4>
-                    <p>ลายเส้นสไตล์มาตรฐานสำหรับลูกค้าทั่วไป</p>
-                </div>
-                <div class="brief-box">
-                    <h4>กลุ่มเสียค่าเข้า</h4>
-                    <p>ลายเส้นพิเศษ พรีเมียม หรือคอลเลกชันเฉพาะ</p>
+        <div class="card fade-up">
+            <h2>รายละเอียดการบรีฟงาน</h2>
+            
+            <div class="brief-section">
+                <div class="brief-title">YCH ( V.1-8 )</div>
+                <div class="brief-content">
+                    <li>แจ้ง Ver. ของลายน้ำที่สนใจ (หากวงแบบที่สนใจมาด้วยจะดีมากค่ะ)</li>
+                    <li>แจ้งชื่อ/ข้อความ (ได้ทั้งภาษาไทย และอังกฤษ ฯลฯ)</li>
+                    <li>ระบุการจัดวางคำ/ขนาดตัวอักษร (คำไหนตัวใหญ่/ตัวเล็ก)</li>
+                    <li>แจ้งโทนสีที่ต้องการ (หากมีเรฟสีสามารถแนบมาได้เลยค่ะ)</li>
+                    <li>แจ้งรูปแบบการลงสี: แบบไล่สี หรือ ระบายแยกสีแต่ละสีในทีละจุด</li>
                 </div>
             </div>
-        </div>
 
-        <div class="card fade-up" style="animation-delay: 0.4s;">
-            <h2>ขั้นตอนการบรีฟงาน</h2>
-            <div class="brief-grid">
-                <div class="brief-box">
-                    <h4>YCH (V.1-8)</h4>
-                    <ul>
-                        <li>แจ้ง Ver. ลายน้ำที่สนใจ</li>
-                        <li>ระบุชื่อ/ข้อความ (ไทย/ENG)</li>
-                        <li>แจ้งการจัดวาง และขนาดตัวอักษร</li>
-                        <li>ระบุโทนสี (แนบเรฟสีได้)</li>
-                        <li>เลือกการลงสี: ไล่สี หรือ แยกสี</li>
-                    </ul>
-                </div>
-                <div class="brief-box">
-                    <h4>CMS (โอมากาเสะ)</h4>
-                    <ul>
-                        <li>ส่งภาพลายน้ำตัวอย่างที่สนใจ</li>
-                        <li>บรีฟของตกแต่งหรือธีมงานได้</li>
-                        <li>ถนัดแนวน่ารักๆ ไม่ยากจนเกินไป</li>
-                        <li>ระบุชื่อ/ข้อความ และโทนสี</li>
-                        <li>ระยะเวลาทำงาน 1-2 วัน/งาน</li>
-                    </ul>
+            <div class="brief-section" style="margin-top: 25px;">
+                <div class="brief-title">CMS ( โอมากาเสะ )</div>
+                <div class="brief-content">
+                    <li>ส่งภาพลายน้ำตัวอย่างมาแจ้งว่าสนใจแบบไหน</li>
+                    <li>สามารถบรีฟของตกแต่ง สิ่งต่างๆ ที่อยากให้วาดลงไป หรือแนวธีมงานได้</li>
+                    <li>ระบุชื่อ/ข้อความ และโทนสีที่ต้องการ</li>
+                    <li>*ทางร้านถนัดแนวน่ารักๆ งานไม่ยากจนเกินไป</li>
                 </div>
             </div>
         </div>
 
-        <div class="card fade-up" style="animation-delay: 0.5s;">
+        <div class="card fade-up">
             <h2>เงื่อนไขการจ้างงาน</h2>
-            <p style="font-size: 0.9rem;">
-                • ระยะเวลาการทำงาน 1-2 วัน ต่อ 1 งาน<br>
-                • หากต้องการเพิ่มของตกแต่งนอกเหนือจาก Ver. ปกติ +5 บาท/ชิ้น<br>
-                • ห้ามนำงานไปแอบอ้างหรือขโมยผลงาน (Every work has an owner)
+            <div class="brief-content">
+                <li>ระยะเวลาในการทำงาน 1-2 วัน / งาน</li>
+                <li>ทุกงานมีเจ้าของ ห้ามแอบอ้างหรือขโมยผลงาน</li>
+                <li>ขอบคุณลูกค้าที่น่ารักทุกคนที่คอยสนับสนุนร้านนะคะ</li>
+            </div>
+        </div>
+
+        <div class="cta-section fade-up">
+            <a href="#" class="cta-btn">ติดต่องาน / สั่งซื้อ</a>
+            <p style="margin-top: 25px; font-weight: 500; font-size: 0.95rem;">
+                Facebook: Lula | IG: chxb.lula | X: @LalaChxb
             </p>
         </div>
 
-        <div class="card fade-up" style="animation-delay: 0.6s;">
-            <h2>แอปพลิเคชัน & เกม</h2>
-            <p>เร็วๆ นี้...</p>
-        </div>
-
-        <div class="card fade-up" style="animation-delay: 0.7s;">
-            <h2>สติกเกอร์ LINE</h2>
-            <p>ติดตามผลงานสติกเกอร์ได้ที่ LINE Store</p>
-        </div>
-
-        <div class="card fade-up" style="animation-delay: 0.8s;">
-            <h2>ตัวอย่างงาน (Portfolio)</h2>
-            <p style="text-align:center; opacity:0.6;">[ พื้นที่แสดงรูปภาพตัวอย่าง ]</p>
-        </div>
-
-        <div class="cta-container fade-up" style="animation-delay: 0.9s;">
-            <a href="#" class="btn-main">สั่งงานผ่าน Facebook / X</a>
-            <p style="margin-top: 20px; font-weight: 500;">Contact: Lula | IG: chxb.lula | X: @LalaChxb</p>
-        </div>
-
         <footer class="fade-up">
-            This is the work of Lula Shop. Thank you for your support! 🩷
+            <p>This is the work of Lula Shop. Wishing you happiness forever. 🐦</p>
         </footer>
     </div>
 
