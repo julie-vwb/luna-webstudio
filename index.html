@@ -3,233 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHXB.LU | YCH</title>
+<title>Lula | Commission</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --blue1:#e6f4ff;
-  --blue2:#cde9ff;
-  --accent:#6bb6f0;
-  --deep:#2c5576;
+ --grad1:#cfe9ff;
+ --grad2:#eaf6ff;
+ --primary:#5da9e9;
+ --soft:#ffffffcc;
+ --text:#24425c;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Mitr',sans-serif;
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:'Mitr',sans-serif;
 }
 
 body{
-  background:
-    radial-gradient(circle at 20% 30%, #ffffff55 0%, transparent 40%),
-    radial-gradient(circle at 80% 60%, #ffffff44 0%, transparent 40%),
-    linear-gradient(180deg,var(--blue1),var(--blue2));
-  display:flex;
-  justify-content:center;
-  padding:60px 20px;
-  overflow-x:hidden;
+ background:linear-gradient(135deg,var(--grad1),var(--grad2));
+ color:var(--text);
+ overflow-x:hidden;
 }
 
-/* floating sparkles */
-body::after{
-  content:"✨ 🫧 💙 ✨";
-  position:fixed;
-  font-size:40px;
-  top:10%;
-  right:5%;
-  opacity:.15;
-  animation:float 12s ease-in-out infinite alternate;
+section{
+ padding:70px 20px;
+ display:flex;
+ justify-content:center;
 }
 
-@keyframes float{
-  from{transform:translateY(0);}
-  to{transform:translateY(60px);}
+.card{
+ width:100%;
+ max-width:900px;
+ background:var(--soft);
+ backdrop-filter:blur(10px);
+ border-radius:25px;
+ padding:40px;
+ box-shadow:0 15px 40px rgba(93,169,233,0.2);
+ animation:fadeUp 0.8s ease forwards;
 }
 
-.poster{
-  position:relative;
-  background:linear-gradient(180deg,#ffffff,#f2f8ff);
-  max-width:1150px;
-  width:100%;
-  border-radius:25px;
-  padding:50px;
-  box-shadow:
-    0 40px 80px rgba(0,0,0,.12),
-    inset 0 0 80px #ffffffaa;
-  overflow:hidden;
+h1{
+ font-size:36px;
+ text-align:center;
+ margin-bottom:10px;
 }
 
-/* watermark */
-.poster::before{
-  content:"CHXB.LU";
-  position:absolute;
-  font-size:140px;
-  font-weight:600;
-  color:#6bb6f015;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) rotate(-15deg);
-  pointer-events:none;
+.subtitle{
+ text-align:center;
+ margin-bottom:25px;
+ opacity:0.8;
 }
 
-/* LOGO */
-.logo{
-  text-align:center;
-  margin-bottom:40px;
+.glow-btn{
+ display:inline-block;
+ padding:14px 30px;
+ border-radius:40px;
+ background:var(--primary);
+ color:white;
+ text-decoration:none;
+ font-weight:500;
+ box-shadow:0 0 15px rgba(93,169,233,0.5);
+ transition:0.3s;
 }
 
-.logo h1{
-  font-size:72px;
-  letter-spacing:4px;
-  color:var(--deep);
-  text-shadow:0 10px 25px #6bb6f050;
+.glow-btn:hover{
+ transform:translateY(-3px);
+ box-shadow:0 0 25px rgba(93,169,233,0.7);
 }
 
-.logo span{
-  color:var(--accent);
-  font-size:24px;
+.status{
+ text-align:center;
+ font-size:18px;
+ margin-top:10px;
 }
 
-/* layout */
-.content{
-  display:grid;
-  grid-template-columns: 420px 1fr;
-  gap:50px;
+.section-title{
+ font-size:22px;
+ margin-bottom:20px;
 }
 
-/* LEFT */
-.left{
-  position:relative;
+.list{
+ line-height:1.9;
 }
 
-.left img{
-  width:100%;
-  filter:drop-shadow(0 30px 40px rgba(0,0,0,.25));
-}
-
-/* tags */
-.tag-black{
-  position:absolute;
-  top:0;
-  left:0;
-  background:black;
-  color:white;
-  padding:14px 22px;
-  font-size:22px;
-}
-
-.tag-blue{
-  position:absolute;
-  top:60px;
-  left:0;
-  background:var(--accent);
-  color:white;
-  padding:12px 22px;
-  font-size:20px;
-}
-
-/* RIGHT */
-.right{
-  font-size:22px;
-  line-height:1.9;
-  color:#333;
-}
-
-.right h2{
-  font-weight:500;
-  margin-bottom:20px;
-}
-
-.item{
-  margin-bottom:18px;
-  padding-bottom:18px;
-  border-bottom:1px dashed #c9e5ff;
-}
-
-.blue{
-  color:var(--accent);
-  font-weight:500;
+img{
+ width:100%;
+ border-radius:15px;
+ margin-top:15px;
 }
 
 .footer{
-  margin-top:50px;
-  text-align:center;
-  font-size:14px;
-  color:#6b8aa6;
-  opacity:.85;
+ text-align:center;
+ font-size:14px;
+ padding:40px 20px;
+ opacity:0.8;
 }
 
-/* responsive */
-@media(max-width:950px){
-  .content{
-    grid-template-columns:1fr;
-  }
-  .logo h1{
-    font-size:50px;
-  }
-  .right{
-    font-size:18px;
-  }
+@keyframes fadeUp{
+ from{opacity:0; transform:translateY(30px);}
+ to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="poster">
+<!-- 1. Header -->
+<section>
+<div class="card" style="text-align:center;">
+<h1>☁️ Lula ☁️</h1>
+<div class="subtitle">🩵 chxb.Lu 🩵</div>
+<a class="glow-btn"> รับออกแบบลายน้ำ</a>
+<div class="status">💧 เปิดรับงานอยู่นะคะ อ่านรายละเอียดเพิ่มเติมได้เลยค่า ✨</div>
+</div>
+</section>
 
-  <div class="logo">
-    <h1>CHXB.LU</h1>
-    <span>💙 Lula | chxb.lu 💙</span>
-  </div>
+<!-- 2. About -->
+<section>
+<div class="card">
+<div class="section-title">☁️ เกี่ยวกับร้าน</div>
+<div class="list">
+รับออกแบบลายน้ำสำหรับ YCH และ CMS  
+ดีไซน์โทนละมุน ฟ้า-ขาว คลีน ๆ 🫧✨
+</div>
+</div>
+</section>
 
-  <div class="content">
+<!-- 3. รายละเอียดบรีฟ -->
+<section>
+<div class="card">
+<div class="section-title">💧 รายละเอียดการบรีฟงาน ลายน้ำ YCH & CMS</div>
 
-    <div class="left">
-      <div class="tag-black">✨ YCH ( V.1-8 )</div>
-      <div class="tag-blue">🫧 รายละเอียดการรับฟ</div>
-      <img src="images/character.png" alt="character">
-    </div>
+<!-- ใส่ภาพที่ให้มา 2 ภาพ -->
+<img src="IMAGE_1_BASE64_HERE">
+<img src="IMAGE_2_BASE64_HERE">
 
-    <div class="right">
+</div>
+</section>
 
-      <h2>💬 แจ้ง Ver.ของลายน้ำ (V.1-8) ว่าสนใจแบบไหน?</h2>
+<!-- 4. ขั้นตอน -->
+<section>
+<div class="card">
+<div class="section-title">🫧 ขั้นตอนการสั่งงาน</div>
+<div class="list">
+🩵 1. ติดต่อผ่าน Facebook / IG / X  
+☁️ 2. แจ้งประเภทงาน YCH (V.1-8) หรือ CMS  
+💧 3. บรีฟรายละเอียด (ชื่อ / ข้อความ / โทนสี / ของตกแต่ง)  
+✨ 4. ชำระเงิน และรอรับงานภายใน 1-2 วัน/งาน 🪽
+</div>
+</div>
+</section>
 
-      <div class="item blue">
-      ✨ เพิ่มของตกแต่งอื่นนอกเหนือจากตัวอย่างในแต่ละ Ver.  
-      +5฿ / 1 ชิ้น
-      </div>
+<!-- 5. เงื่อนไข -->
+<section>
+<div class="card">
+<div class="section-title">✨ เงื่อนไขการรับงาน</div>
+<div class="list">
+💧 ระยะเวลาทำงาน 1-2 วัน/งาน  
+☁️ ของตกแต่งเพิ่มเติม บวกเพิ่มอย่างละ 5฿ / 1 ชิ้น  
+🫧 ใส่ชื่อ/ข้อความได้ทั้งไทย อังกฤษ  
+✨ หากมีเรฟ สามารถแนบเรฟสีมาได้เลยค่ะ
+</div>
+</div>
+</section>
 
-      <div class="item">
-      🏷️ ชื่อ/ข้อความต่างๆ ที่อยากให้ใส่ลงบนลายน้ำ  
-      แจ้งขนาด ตัวใหญ่/เล็ก หรือรูปแบบการจัดวางได้เลย
-      </div>
+<!-- 6. บริการเพิ่มเติม -->
+<section>
+<div class="card">
+<div class="section-title">🪡 บริการเพิ่มเติม</div>
+<div class="list">
+☁️ ออกแบบสำหรับ CMS  
+แนวโอมาคาเสะ น่ารัก ละมุน ไม่หนักจนเกินไป 🫧
+</div>
+</div>
+</section>
 
-      <div class="item">
-      🎨 โทนสีที่ต้องการ สามารถแนบเรฟสีมาได้
-      </div>
+<!-- 7. ติดต่อ -->
+<section>
+<div class="card">
+<div class="section-title">💧 ติดต่อร้านค้า</div>
+<div class="list">
+🩵 Facebook : Lula  
+🫧 IG : chxb.lula  
+🕊️ X : @LalaChxb
+</div>
+</div>
+</section>
 
-      <div class="item blue">
-      🌈 แจ้งรูปแบบการลงสี  
-      ไล่สี / แยกสีทีละจุด
-      </div>
+<!-- 8. ตัวอย่างงาน -->
+<section>
+<div class="card">
+<div class="section-title">☁️ ตัวอย่างงาน</div>
+ดูผลงานเพิ่มเติมได้ที่ IG : chxb.lula หรือ X : @LalaChxb 🧵
+</div>
+</section>
 
-      <div class="item">
-      ⏳ ระยะเวลาในการทำงาน 1-2 วัน/งาน
-      </div>
+<!-- 9. CTA -->
+<section>
+<div class="card" style="text-align:center;">
+<div style="margin-bottom:20px;font-size:20px;">
+☁️ สนใจสั่งงาน ติดต่อได้เลยนะคะ 🩵
+</div>
+<a class="glow-btn">✉️ ติดต่อสั่งงาน</a>
+</div>
+</section>
 
-    </div>
-
-  </div>
-
-  <div class="footer">
-    💌 Contact : Facebook : Lula | IG : chxb.lula | X : @LalaChxb <br>
-    ✨ This is the work of Lula Shop. Do not claim or steal the work.
-  </div>
-
+<!-- 10. Footer -->
+<div class="footer">
+☁️ Lula | chxb.Lu  
+<br>
+🫧 Thank you for your support 🐦
 </div>
 
 </body>
