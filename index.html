@@ -16,198 +16,220 @@
 }
 
 body{
-  background:#eaf4fb;
+  background:linear-gradient(180deg,#eaf4fb,#dff0fb);
   display:flex;
   justify-content:center;
-  padding:40px 15px;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
 }
 
-.wrapper{
+/* ===== POPUP ===== */
+.popup{
   width:100%;
   max-width:520px;
-  background:#dff0fb;
-  border-radius:28px;
-  padding:25px 20px 40px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.08);
-}
-
-.header{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.header h1{
-  font-size:28px;
-  color:#2f5f7a;
-}
-
-.subtitle{
-  font-size:14px;
-  color:#6b8fa6;
-  margin-top:5px;
-}
-
-.btn-group{
+  height:90vh;
+  background:#cfe7f6;
+  border-radius:30px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.18);
+  overflow:hidden;
   display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:15px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  position:relative;
+  z-index:2;
 }
 
-.btn{
-  padding:8px 16px;
-  border-radius:50px;
-  font-size:14px;
-  border:2px solid #5ea9d6;
-  color:#2f6d91;
-  background:white;
+.popup-header{
+  background:#f2f2f2;
+  padding:15px;
+  text-align:center;
+  font-weight:600;
+  font-size:18px;
 }
 
+.content{
+  padding:25px;
+  overflow-y:auto;
+}
+
+/* ===== SECTIONS ===== */
 .section{
-  background:white;
+  background:#f4f4f4;
   border-radius:22px;
   padding:20px;
   margin-bottom:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 .section-title{
-  font-size:18px;
   font-weight:600;
   color:#2f6d91;
   margin-bottom:12px;
+  font-size:18px;
 }
 
-.status{
-  color:#49b37f;
-  font-weight:500;
-}
-
-.images{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.images img{
-  width:100%;
-  max-width:220px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.steps{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
+/* ===== STEPS ===== */
 .step{
   display:flex;
-  gap:10px;
+  gap:12px;
+  margin-bottom:14px;
 }
 
 .circle{
-  min-width:30px;
-  height:30px;
+  min-width:32px;
+  height:32px;
   background:#5ea9d6;
   color:white;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:14px;
 }
 
-.contact-btn{
+/* ===== BULLET ===== */
+.bullet{
+  margin-bottom:10px;
+}
+
+/* ===== CONTACT ===== */
+.contact-box{
+  background:#e6f2fa;
+  padding:15px;
+  border-radius:15px;
+}
+
+.button{
   display:block;
-  width:100%;
   text-align:center;
-  background:#5ea9d6;
+  background:#4aa3d6;
   color:white;
   padding:14px;
-  border-radius:50px;
-  font-size:16px;
+  border-radius:40px;
+  margin:15px 0;
   text-decoration:none;
-  margin-top:10px;
-  box-shadow:0 10px 25px rgba(94,169,214,0.4);
+  font-weight:500;
 }
 
+/* ===== HORIZONTAL IMAGE SLIDE ===== */
+.images{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.images img{
+  flex:0 0 85%;
+  border-radius:18px;
+  scroll-snap-align:center;
+}
+
+/* ===== FLOATING EMOJI ===== */
+.floating{
+  position:fixed;
+  font-size:24px;
+  animation:floatUp 7s infinite ease-in-out;
+  opacity:0.7;
+  pointer-events:none;
+  z-index:1;
+}
+
+.f1{ left:8%; bottom:-20px; }
+.f2{ left:75%; bottom:-40px; animation-delay:2s; }
+.f3{ left:40%; bottom:-60px; animation-delay:4s; }
+
+@keyframes floatUp{
+  0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+  20%{ opacity:0.8; }
+  50%{ transform:translateY(-250px) rotate(10deg); }
+  100%{ transform:translateY(-500px) rotate(-10deg); opacity:0; }
+}
+
+/* ===== FOOTER ===== */
 .footer{
   text-align:center;
   font-size:13px;
-  color:#6b8fa6;
-  margin-top:10px;
+  margin-top:20px;
+  color:#2f6d91;
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<!-- FLOATING EMOJI -->
+<div class="floating f1">🌸</div>
+<div class="floating f2">✨</div>
+<div class="floating f3">💧</div>
 
-<div class="header">
-  <h1>☁️ Lula ☁️</h1>
-  <div class="subtitle">chxb.lu</div>
+<div class="popup">
 
-  <div class="btn-group">
-    <div class="btn">🎨 รับออกแบบลายน้ำ</div>
-    <div class="btn">Watermark Design</div>
-  </div>
+<div class="popup-header">
+commission
+</div>
+
+<div class="content">
+
+<div class="section">
+<div class="section-title">ขั้นตอนการสั่งงาน</div>
+
+<div class="step"><div class="circle">1</div>
+<div>ติดต่อร้านผ่าน Facebook / IG / X ตามช่องทางด้านล่าง</div></div>
+
+<div class="step"><div class="circle">2</div>
+<div>แจ้งประเภทที่ต้องการ — YCH (V.1–8) หรือ CMS พร้อมส่งรูปอ้างอิง</div></div>
+
+<div class="step"><div class="circle">3</div>
+<div>แจ้งรายละเอียด: ชื่อ / ข้อความ / โทนสี / ของตกแต่ง / การจัดวาง</div></div>
+
+<div class="step"><div class="circle">4</div>
+<div>ชำระเงิน และรอรับงานภายใน 1–2 วัน/งาน 🎉</div></div>
 </div>
 
 <div class="section">
-  <div class="section-title">สถานะรับงาน</div>
-  <div class="status">● เปิดรับงานอยู่นะคะ ✨</div>
+<div class="section-title">เงื่อนไขการรับงาน</div>
+
+<div class="bullet">✨ ระยะเวลาในการทำงาน 1–2 วัน/งาน</div>
+<div class="bullet">✨ ของตกแต่งเพิ่มเติมนอกเหนือจากตัวอย่าง บวกเพิ่มอย่างละ 5 ฿ / 1 ชิ้น</div>
+<div class="bullet">✨ สามารถใส่ชื่อ/ข้อความได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ</div>
+<div class="bullet">✨ หากมีเรฟ สามารถแนบเรฟเพิ่มมาได้เลยค่ะ</div>
+<div class="bullet">✨ การลงสีรบกวนแจ้งว่า ต้องการแบบไล่สี หรือระบายแยกสีแต่ละสีในทีละจุดสลับกัน</div>
 </div>
 
 <div class="section">
-  <div class="section-title">รายละเอียดการรับงาน</div>
-
-  <div class="images">
-    <img src="banner1.jpg" alt="YCH Example">
-    <img src="banner2.jpg" alt="CMS Example">
-  </div>
+<div class="section-title">บริการเพิ่มเติม</div>
+<div class="contact-box">
+🎨 ออกแบบสำหรับ CMS<br><br>
+ทางร้านออกแบบแนว “โอมากาเสะ” สามารถปรับของตกแต่ง หรือสีต่างๆ ที่อยากให้วาดลงได้ค่ะ หรือแนวธีมงานก็ได้ แต่ไม่ยากจนเกินไป ทางร้านถนัดแนวน่ารักๆ 🌊
+</div>
 </div>
 
 <div class="section">
-  <div class="section-title">ขั้นตอนการสั่งงาน</div>
+<div class="section-title">ติดต่อ</div>
 
-  <div class="steps">
-    <div class="step">
-      <div class="circle">1</div>
-      <div>ติดต่อร้านผ่าน Facebook / IG / X</div>
-    </div>
+<div class="contact-box">
+• Facebook : Lula<br>
+• IG : chxb.lula<br>
+• X (Twitter) : @LalaChxb
+</div>
 
-    <div class="step">
-      <div class="circle">2</div>
-      <div>แจ้งประเภทงาน YCH หรือ CMS พร้อมรูปตัวอย่าง</div>
-    </div>
+<a href="#" class="button">📩 ติดต่อสั่งงาน</a>
 
-    <div class="step">
-      <div class="circle">3</div>
-      <div>บอกรายละเอียด ชื่อ / โทน / ของตกแต่ง</div>
-    </div>
-
-    <div class="step">
-      <div class="circle">4</div>
-      <div>ชำระเงิน และรอรับงานภายใน 1-2 วัน 🎉</div>
-    </div>
-  </div>
+<div class="footer">
+© Lula | chxb.lu · Thank you for your support from our lovely customers. Wishing you happiness forever. 💙
+</div>
 </div>
 
 <div class="section">
-  <div class="section-title">ติดต่อร้านค้า</div>
+<div class="section-title">รายละเอียดตัวอย่างงาน</div>
 
-  <a href="#" class="contact-btn">📩 ติดต่อสั่งงาน</a>
-
-  <div class="footer">
-    © Lula | chxb.lu · Thank you for your support 💙
-  </div>
+<div class="images">
+<img src="banner1.jpg">
+<img src="banner2.jpg">
 </div>
 
+</div>
+
+</div>
 </div>
 
 </body>
