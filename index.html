@@ -80,23 +80,77 @@
         }
 
         h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             font-weight: 600;
             background: linear-gradient(135deg, #5a7fcd, #90caf9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1::before,
+        h1::after {
+            content: '☁️';
+            font-size: 0.7em;
         }
 
         .subtitle {
             font-size: 1.2em;
             font-weight: 400;
             color: #5a7fcd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .subtitle::before,
+        .subtitle::after {
+            content: '☁️';
+            font-size: 0.8em;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #5a7fcd, #90caf9);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 127, 205, 0.4);
+        }
+
+        .tab-button.outline {
+            background: white;
+            color: #5a7fcd;
+            border: 2px solid #5a7fcd;
         }
 
         .status-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 12px 30px;
             background: linear-gradient(135deg, #5a7fcd, #90caf9);
             color: white;
@@ -112,44 +166,45 @@
             50% { box-shadow: 0 8px 32px rgba(90, 127, 205, 0.6); }
         }
 
-        h2 {
-            font-size: 1.8em;
+        .section-title {
+            font-size: 1.5em;
             font-weight: 600;
             color: #5a7fcd;
             margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #90caf9;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(90, 127, 205, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-image:hover {
+            transform: scale(1.02);
+        }
+
+        .step-item {
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h2::before {
-            content: '✦';
-            color: #90caf9;
-        }
-
-        .steps-list {
-            counter-reset: step-counter;
-            list-style: none;
-        }
-
-        .steps-list li {
-            counter-increment: step-counter;
+            align-items: flex-start;
+            gap: 15px;
             padding: 15px;
             margin-bottom: 15px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 16px;
-            position: relative;
-            padding-left: 60px;
-            font-weight: 400;
         }
 
-        .steps-list li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 35px;
+        .step-number {
+            min-width: 35px;
             height: 35px;
             background: linear-gradient(135deg, #5a7fcd, #90caf9);
             color: white;
@@ -158,40 +213,103 @@
             align-items: center;
             justify-content: center;
             font-weight: 600;
+            font-size: 1.1em;
         }
 
-        .info-section {
-            margin-bottom: 30px;
+        .step-content {
+            flex: 1;
+            padding-top: 5px;
         }
 
-        .info-image {
-            width: 100%;
+        .info-box {
+            background: rgba(144, 202, 249, 0.15);
+            padding: 20px;
             border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(90, 127, 205, 0.2);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            margin: 20px 0;
         }
 
-        .info-image:hover {
-            transform: scale(1.02);
+        .info-box-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #5a7fcd;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-content {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #5a7fcd;
+        }
+
+        .highlight-text {
+            font-weight: 600;
+            color: #4a6bb3;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            padding: 10px 0;
+            font-size: 1.05em;
+            color: #5a7fcd;
+        }
+
+        .contact-list li strong {
+            color: #4a6bb3;
+        }
+
+        .example-note {
+            text-align: center;
+            color: #5a7fcd;
+            font-size: 1.05em;
+            margin-top: 15px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #5a7fcd;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            margin: 30px auto;
             padding: 18px 40px;
             background: linear-gradient(135deg, #5a7fcd, #90caf9);
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
             box-shadow: 0 8px 24px rgba(90, 127, 205, 0.4);
             transition: all 0.3s ease;
-            animation: glow 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .cta-button:hover {
@@ -199,26 +317,26 @@
             box-shadow: 0 12px 32px rgba(90, 127, 205, 0.6);
         }
 
+        .cta-button.secondary {
+            background: white;
+            color: #5a7fcd;
+            border: 2px solid #5a7fcd;
+        }
+
         .footer {
             text-align: center;
             padding: 30px;
             font-weight: 300;
             color: #5a7fcd;
+            font-size: 0.95em;
         }
 
-        .footer-links {
-            margin-top: 15px;
-        }
-
-        .footer-links a {
-            color: #5a7fcd;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 400;
-        }
-
-        .footer-links a:hover {
-            color: #90caf9;
+        .footer-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         @media (max-width: 768px) {
@@ -228,6 +346,10 @@
 
             .glass-card {
                 padding: 20px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -244,58 +366,129 @@
         <!-- Header -->
         <div class="header">
             <h1>Lula</h1>
-            <p class="subtitle">chxb.lu | รับออกแบบลายน้ำ</p>
+            <p class="subtitle">chxb.lu</p>
+            <div class="button-group">
+                <button class="tab-button">🎨 รับออกแบบลายน้ำ</button>
+                <button class="tab-button outline">Watermark Design</button>
+            </div>
         </div>
 
         <!-- สถานะรับงาน -->
         <div class="glass-card" style="text-align: center; animation-delay: 0.1s;">
-            <span class="status-badge">✦ เปิดรับงาน ✦</span>
-            <p style="margin-top: 15px; font-size: 0.95em;">ระยะเวลาในการทำงาน <strong>1-2 วัน/งาน</strong></p>
-        </div>
-
-        <!-- ขั้นตอนการสั่งงาน -->
-        <div class="glass-card" style="animation-delay: 0.2s;">
-            <h2>ขั้นตอนการสั่งงาน</h2>
-            <ol class="steps-list">
-                <li>ติดต่อทาง DM เพื่อแจ้งความประสงค์</li>
-                <li>เลือกประเภทงาน (YCH หรือ CMS)</li>
-                <li>บริฟรายละเอียดที่ต้องการ (ตามรูปด้านล่าง)</li>
-                <li>รับใบเสนอราคาและเงื่อนไข</li>
-                <li>ชำระเงินตามที่ตกลง</li>
-                <li>รอรับงานภายใน 1-2 วัน</li>
-                <li>รับไฟล์งานเต็มรูปแบบ</li>
-            </ol>
+            <span class="status-badge">● เปิดรับงานอยู่นะคะ ✨</span>
         </div>
 
         <!-- รายละเอียดการบริฟงาน -->
-        <div class="glass-card" style="animation-delay: 0.3s;">
-            <h2>รายละเอียดการบริฟงาน</h2>
+        <div class="glass-card" style="animation-delay: 0.2s;">
+            <div class="section-title">รายละเอียดการบริฟงาน</div>
+            <p style="margin-bottom: 20px; font-size: 1.05em;">รายละเอียดการบริฟสำหรับลายน้ำมาเเล้วประเภท</p>
             
-            <div class="info-section">
-                <h3 style="color: #5a7fcd; font-size: 1.4em; margin-bottom: 15px;">✦ CMS</h3>
+            <div class="image-grid">
                 <img src="/mnt/user-data/uploads/cfbcaa0068aec088e703fe40359cece3.jpeg" alt="CMS รายละเอียดการบริฟ" class="info-image">
-            </div>
-
-            <div class="info-section">
-                <h3 style="color: #5a7fcd; font-size: 1.4em; margin-bottom: 15px;">✦ YCH (V.1-8)</h3>
                 <img src="/mnt/user-data/uploads/529ce901b40544091239d722da345093.jpeg" alt="YCH รายละเอียดการบริฟ" class="info-image">
             </div>
         </div>
 
-        <!-- CTA Button -->
-        <a href="#" class="cta-button">✦ ติดต่อสั่งงานเลย ✦</a>
+        <!-- ขั้นตอนการสั่งงาน -->
+        <div class="glass-card" style="animation-delay: 0.3s;">
+            <div class="section-title">ขั้นตอนการสั่งงาน</div>
+            
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">ติดต่อร้านผ่าน Facebook / IG / X ตามช่องทางด้านล่าง</div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">แจ้งประเภทที่ต้องการ — <span class="highlight-text">YCH (V.1-8)</span> หรือ <span class="highlight-text">CMS</span> พร้อมส่งรูปอ้างอิงลายน้ำที่ชื่นชอบ</div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">บริฟรายละเอียด: ชื่อ / ข้อความ / โทนสี / ของตกแต่ง / การจัดวาง</div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">ชำระเงิน และรอรับงานภายใน 1-2 วัน/งาน 🎉</div>
+            </div>
+        </div>
+
+        <!-- เงื่อนไขการรับงาน -->
+        <div class="glass-card" style="animation-delay: 0.4s;">
+            <div class="section-title">เงื่อนไขการรับงาน</div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                <span style="color: #90caf9; font-size: 1.2em;">◆</span>
+                <span>ระยะเวลาในการทำงาน 1-2 วัน/งาน</span>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                <span style="color: #90caf9; font-size: 1.2em;">◆</span>
+                <span>ของตกแต่งเพิ่มนอกเหนือจากตัวอย่างที่ให้ไว้ บวกเพิ่มอย่างละ <span class="highlight-text">5 ฿ / 1 ชิ้น</span> ค่ะ</span>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                <span style="color: #90caf9; font-size: 1.2em;">◆</span>
+                <span>สามารถใส่ชื่อ/ข้อความได้ทั้งภาษาไทย ภาษาอังกฤษ ฯลฯ</span>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                <span style="color: #90caf9; font-size: 1.2em;">◆</span>
+                <span>หากมีเรฟสี สามารถแนบเรฟสีมาได้เลยค่ะ</span>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #90caf9; font-size: 1.2em;">◆</span>
+                <span>การลงสีรูปวามลูกค้าแจ้งด้วยว่า อยากได้การลงแบบใสสี หรือ ระบายแฮทชิ่งเต็สล์ในคำจุดสลับกัน</span>
+            </div>
+        </div>
+
+        <!-- บริการเพิ่มเติม -->
+        <div class="glass-card" style="animation-delay: 0.5s;">
+            <div class="section-title">บริการเพิ่มเติม</div>
+            
+            <div class="info-box">
+                <div class="info-box-title">🎨 ออกแบบสำหรับ CMS</div>
+                <div class="info-box-content">
+                    ทางร้านออกแบบแบบ <span class="highlight-text">'โอมากาเสะ'</span> สามารถบริฟของตกแต้ง หรือสิ่งต่างๆที่อยากให้วาดลงได้ <span class="highlight-text">หรือสิ่งต่างๆ ที่อยากให้วาดลงได้ค่ะ หรือแนวริมงานก็ได้ แต่ไม่ยากจนเกินไป</span> ทางร้าน<span class="highlight-text">ถนัดแนวน่ารักๆ</span> 🌸
+                </div>
+            </div>
+        </div>
+
+        <!-- ติดต่อร้านค้า -->
+        <div class="glass-card" style="animation-delay: 0.6s;">
+            <div class="section-title">ติดต่อร้านค้า</div>
+            
+            <ul class="contact-list">
+                <li>· <strong>Facebook</strong> : Lula</li>
+                <li>· <strong>IG</strong> : chxb.lula</li>
+                <li>· <strong>X (Twitter)</strong> : @LalaChxb</li>
+            </ul>
+        </div>
+
+        <!-- ตัวอย่างงาน -->
+        <div class="glass-card" style="animation-delay: 0.7s;">
+            <div class="section-title">ตัวอย่างงาน</div>
+            <p class="example-note">สามารถดูผลงานเพิ่มเติมได้ที่ช่องทาง IG : chxb.lula หรือ X : @LalaChxb ค่ะ 🌸</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="glass-card cta-section" style="animation-delay: 0.8s;">
+            <div class="cta-title">สนใจสั่งงาน ติดต่อได้เลยค่ะ! 💧</div>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">📧 ติดต่อสั่งงาน</a>
+                <a href="#" class="cta-button secondary">🦋 X : @LalaChxb</a>
+            </div>
+        </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p>© 2024 Lula (chxb.lu)</p>
-            <p style="font-size: 0.9em; margin-top: 10px;">This is the work of Lula Shop. Do not claim or steal the work.</p>
-            <p style="font-size: 0.9em;">Every work has an owner. Thank you for your support from our lovely customers.</p>
-            <p style="font-size: 0.9em;">Wishing you happiness forever.</p>
-            <div class="footer-links">
-                <a href="#">Facebook: Lula</a>
-                <a href="#">IG: chxb.lula</a>
-                <a href="#">X: @LalaChxb</a>
-            </div>
+            <p class="footer-note">
+                <span>🔹</span>
+                <span>© Lula | chxb.Lu · Thank you for your support from our lovely customers. Wishing you happiness forever.</span>
+                <span>💙</span>
+            </p>
         </div>
     </div>
 
@@ -333,4 +526,3 @@
     </script>
 </body>
 </html>
-```
