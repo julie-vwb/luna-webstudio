@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lula | chxb.Lu — Commission Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#5bb8e8;
+  --purple:#7ac8e8;
+  --text:#1a4a6b;
+  --text-light:#2a6090;
+  --card-bg:rgba(255,255,255,.78);
+  --border:rgba(100,180,230,.4);
+  --btn1:#5bb8e8;
+  --btn2:#3a9bd5;
+}
+body{
+  font-family:'Mitr',sans-serif;
+  font-weight:400;
+  background:linear-gradient(160deg,#d6eeff 0%,#e8f4ff 50%,#d6f0ff 100%);
+  min-height:100vh;
+  color:var(--text);
+  overflow-x:hidden;
+}
+/* sparkles */
+.sparkle{position:fixed;pointer-events:none;font-size:1.2rem;animation:float 6s ease-in-out infinite;z-index:0;opacity:.6}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(15deg)}}
+.s1{top:8%;left:4%;animation-delay:0s}
+.s2{top:20%;right:6%;animation-delay:1s}
+.s3{top:40%;left:2%;animation-delay:2s}
+.s4{top:60%;right:4%;animation-delay:.5s}
+.s5{top:75%;left:8%;animation-delay:1.5s}
+.s6{top:85%;right:10%;animation-delay:3s}
+.s7{top:50%;left:92%;animation-delay:2.5s}
+.s8{top:30%;left:95%;animation-delay:.8s}
+
+/* animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(91,184,232,.5)}50%{box-shadow:0 0 0 10px rgba(91,184,232,0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes glow{0%,100%{box-shadow:0 4px 20px rgba(91,184,232,.4)}50%{box-shadow:0 4px 40px rgba(91,184,232,.8),0 0 60px rgba(58,155,213,.3)}}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+.container{max-width:800px;margin:0 auto;padding:20px 16px;position:relative;z-index:1}
+
+/* card base */
+.card{
+background:var(–card-bg);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+border:1px solid var(–border);
+border-radius:22px;
+padding:28px 24px;
+margin-bottom:20px;
+animation:fadeUp .6s ease both;
+}
+.card:nth-child(2){animation-delay:.1s}
+.card:nth-child(3){animation-delay:.2s}
+.card:nth-child(4){animation-delay:.3s}
+.card:nth-child(5){animation-delay:.4s}
+.card:nth-child(6){animation-delay:.5s}
+.card:nth-child(7){animation-delay:.6s}
+.card:nth-child(8){animation-delay:.7s}
+.card:nth-child(9){animation-delay:.8s}
+.card:nth-child(10){animation-delay:.9s}
+
+/* header */
+.header{text-align:center;padding:36px 24px 28px}
+
+.shop-name{font-size:2rem;font-weight:600;color:var(–text);margin-bottom:4px}
+.shop-sub{font-size:.95rem;font-weight:300;color:var(–text-light);margin-bottom:14px}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.badge{
+background:linear-gradient(135deg,var(–btn1),var(–btn2));
+color:#fff;font-size:.8rem;font-weight:500;
+padding:5px 16px;border-radius:20px;
+}
+.badge-outline{
+background:transparent;
+border:1.5px solid var(–pink);
+color:var(–text);font-size:.8rem;font-weight:500;
+padding:5px 16px;border-radius:20px;
+}
+
+/* section title */
+.sec-title{
+font-size:1.15rem;font-weight:600;
+color:var(–text);margin-bottom:16px;
+display:flex;align-items:center;gap:8px;
+}
+.sec-title::before{content:’’;display:inline-block;width:4px;height:20px;border-radius:4px;background:linear-gradient(180deg,var(–btn1),var(–btn2))}
+
+/* status */
+.status-row{display:flex;align-items:center;gap:10px;justify-content:center;font-size:1.05rem;font-weight:500}
+.dot{width:12px;height:12px;border-radius:50%;background:#4dd0a0;animation:blink 1.4s ease-in-out infinite;flex-shrink:0}
+.dot.busy{background:#f0856e}
+
+/* price table */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
+.price-item{
+background:rgba(91,184,232,.08);
+border:1px solid rgba(91,184,232,.25);
+border-radius:14px;padding:14px 16px;text-align:center;
+}
+.price-label{font-size:.85rem;color:var(–text-light);font-weight:300;margin-bottom:4px}
+.price-val{
+font-size:1.2rem;font-weight:600;
+background:linear-gradient(135deg,var(–btn1),var(–btn2));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* lnk badge */
+.lnk-badge{
+display:inline-block;
+background:linear-gradient(135deg,var(–btn1),var(–btn2));
+color:#fff;font-size:.8rem;font-weight:500;
+padding:3px 14px;border-radius:20px;margin-bottom:12px;
+}
+
+/* group */
+.group-title{
+font-size:1rem;font-weight:600;color:var(–text);
+margin:16px 0 10px;display:flex;align-items:center;gap:6px;
+}
+.group-free .group-title{color:#3aaa80}
+.group-paid .group-title{color:#3a9bd5}
+
+/* steps */
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step-num{
+width:32px;height:32px;border-radius:50%;flex-shrink:0;
+background:linear-gradient(135deg,var(–btn1),var(–btn2));
+color:#fff;font-weight:600;font-size:.9rem;
+display:flex;align-items:center;justify-content:center;
+}
+.step-text{font-size:.95rem;line-height:1.7;padding-top:4px}
+
+/* cond list */
+.cond-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cond-list li{display:flex;gap:8px;align-items:flex-start;font-size:.92rem;line-height:1.65}
+.cond-list li::before{content:‘✦’;color:var(–pink);flex-shrink:0;margin-top:2px}
+
+/* brief images */
+.brief-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.brief-imgs img{width:100%;border-radius:14px;border:1px solid var(–border)}
+@media(max-width:500px){.brief-imgs{grid-template-columns:1fr}}
+
+/* cta */
+.cta-wrap{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn-main{
+display:inline-block;
+background:linear-gradient(135deg,var(–btn1),var(–btn2));
+color:#fff;font-family:‘Mitr’,sans-serif;font-weight:500;font-size:1rem;
+padding:14px 40px;border-radius:50px;text-decoration:none;
+animation:glow 2.5s ease-in-out infinite;
+border:none;cursor:pointer;transition:transform .2s;
+}
+.btn-main:hover{transform:scale(1.04)}
+.btn-sec{
+display:inline-block;
+background:transparent;
+border:2px solid var(–pink);
+color:var(–text);font-family:‘Mitr’,sans-serif;font-weight:500;font-size:1rem;
+padding:12px 36px;border-radius:50px;text-decoration:none;
+transition:all .2s;cursor:pointer;
+}
+.btn-sec:hover{background:rgba(91,184,232,.1)}
+
+/* footer */
+.footer{text-align:center;font-size:.8rem;font-weight:300;color:var(–text-light);padding:16px 0 8px}
+
+/* app/game / sticker */
+.info-box{
+background:rgba(91,184,232,.07);
+border:1px solid rgba(91,184,232,.2);
+border-radius:14px;padding:16px;
+font-size:.92rem;line-height:1.75;
+}
+
+/* divider */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(–border),transparent);margin:16px 0}
+
+ul.plain{list-style:none;display:flex;flex-direction:column;gap:8px}
+ul.plain li{display:flex;gap:8px;align-items:flex-start;font-size:.92rem;line-height:1.65}
+ul.plain li::before{content:’·’;color:var(–pink);font-size:1.4rem;line-height:1;flex-shrink:0}
+</style>
+
+</head>
+<body>
+
+<!-- sparkles -->
+
+<span class="sparkle s1">✦</span>
+<span class="sparkle s2">🌊</span>
+<span class="sparkle s3">✿</span>
+<span class="sparkle s4">⋆</span>
+<span class="sparkle s5">💧</span>
+<span class="sparkle s6">✦</span>
+<span class="sparkle s7">🌸</span>
+<span class="sparkle s8">⋆</span>
+
+<div class="container">
+
+  <!-- 1. Header -->
+
+  <div class="card header">
+    <div class="shop-name">☁️ Lula ☁️</div>
+    <div class="shop-sub"> chxb.Lu </div>
+    <div class="badges">
+      <span class="badge">🎨 รับออกแบบลายน้ำ</span>
+      <span class="badge-outline">Watermark Design</span>
+    </div>
+  </div>
+
+  <!-- 2. สถานะรับงาน -->
+
+  <div class="card" style="animation-delay:.1s">
+    <div class="sec-title">สถานะรับงาน</div>
+    <div class="status-row">
+      <span class="dot"></span>
+      <span>เปิดรับงานอยู่นะคะอ่านรายละเอียดเพิ่มเติมได้เลยค่ะ ✨</span>
+    </div>
+  </div>
+
+  <!-- 4. กลุ่มลายเส้น -->
+
+  <div class="card" style="animation-delay:.3s">
+    <div class="sec-title">รายละเอียดการบรีฟงาน</div>
+    <p style="font-size:.92rem;color:var(--text-light);margin-bottom:14px">รายละเอียดการบรีฟสำหรับลายน้ำแต่ละประเภท</p>
+    <div class="brief-imgs">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCMRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAABDigAwAEAAAAAQAABDgAAAAA/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/AABEIBDgEOAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2wBDAAEBAQEBAQIBAQIDAgICAwQDAwMDBAUEBAQEBAUGBQUFBQUFBgYGBgYGBgYHBwcHBwcICAgICAkJCQkJCQkJCQn/2wBDAQEBAQICAgQCAgQJBgUGCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQn/3QAEAET/2gAMAwEAAhEDEQA/AP3wooor+3Zz5T+ZwooorP267AFFFFROrdWAKKKKxAKKKKC1C4UUUUA4BRRRQSgoopwUkZoHJWG0UU4KTyKCRtFSqmOtOwtBp7MgoqZlyOKZ5bf5/wD10EyjYZRUgQg80/C0FezIKKmKgjimeW3+f/10CcLDKKf5bf5//XR5bf5//XQCgMoqfC1H5bf5/wD10D9mMoqVUweaAmDk9KA9mRUVPhaMLWc6tnYPZkFFT4WjApxndXGoEarkZpfL/wA/5NSUVn7ddiyFl202rGAetJha3M/ZkSjJxTvL/wA/5NPwB0paic7K5UY2I/L/AM/5NKEwc0+irRQU1lyc06ipnKyuBH5f+f8AJqSiisvbrsAU1Vwc06ij267AFFFFONZN2sAhGRioymBmpaK2AiVc81LRgDpRWc6lnYAooopzqcoBRRRWft12AKKKKuFTmAKKKKqcrK4BQeRiiimndXAj8v8Az/k01l21NRSlKyuBH5f+f8mjy/8AP+TUlFEZXVwAcDFFFFTOrZ2AKDyMUUVKrJu1gEUYGKWiitgCmqu2nUUAFQHqanpMCgUlciK4GabVjAppUEcUEezIaUcnFPCEHmn4FBUY2GhMHP8An+dPoooKI/L/AM/5NNVd1TUYA6UAR+X/AJ/yaPL/AM/5NSUUAQHg4oAycVNgUYF
