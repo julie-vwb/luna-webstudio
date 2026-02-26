@@ -7,18 +7,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blue-bg-start: #e0f2ff;
-    --blue-bg-end: #3399ff;
-    --card-white: rgba(255, 255, 255, 0.95); /* ขยับความเข้มขาวขึ้นเพื่อให้ตัวหนังสือชัด */
-    --text-main: #1a4a73; /* ปรับสีน้ำเงินให้อิ่มและเข้มขึ้นเพื่อให้อ่านง่าย */
-    --text-highlight: #0056b3;
-    --accent-blue: #007bff;
+    /* พื้นหลังฟ้าพาสเทล */
+    --blue-bg-start: #f0f8ff; 
+    --blue-bg-mid: #e1f1ff;
+    --blue-bg-end: #d1e9ff;
+    
+    /* สีชื่อร้าน (สีฟ้าที่เข้มกว่าพื้นหลัง 2 ระดับ) */
+    --shop-name-color: #79b7ed; 
+    
+    --card-white: rgba(255, 255, 255, 0.95);
+    --text-main: #5d8db5; /* ปรับตัวหนังสือทั่วไปให้เป็นฟ้าหม่นเข้าชุดกัน */
+    --text-highlight: #4a86b9;
+    --accent-blue: #70ace0;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: 'Mitr', sans-serif;
-  background: linear-gradient(180deg, var(--blue-bg-start) 0%, #80c1ff 50%, var(--blue-bg-end) 100%);
+  background: linear-gradient(180deg, var(--blue-bg-start) 0%, var(--blue-bg-mid) 50%, var(--blue-bg-end) 100%);
   background-attachment: fixed;
   min-height: 100vh;
   color: var(--text-main);
@@ -34,27 +40,26 @@ body {
 
 .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
-/* HEADER - ปรับให้ตัวหนังสือขาวขอบเงาเด่นๆ */
+/* HEADER - ชื่อร้านสีฟ้าเข้มกว่าพื้นหลัง */
 .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
 .shop-name {
 font-size:2.6rem; font-weight:700;
-color: #ffffff;
+color: var(--shop-name-color);
 letter-spacing:2px;
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
-/* เพิ่มเงาเข้มเพื่อให้ตัวหนังสือขาวลอยเด่น */
-text-shadow: 2px 4px 8px rgba(0, 40, 100, 0.4);
+/* ลดเงาให้ดูละมุนแบบพาสเทล */
+text-shadow: 2px 2px 5px rgba(121, 183, 237, 0.2);
 }
 .shop-sub { 
   font-size:.9rem; 
-  color: #ffffff; 
+  color: var(--text-highlight); 
   margin-top:8px; 
   line-height:1.7; 
   font-weight: 500;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
@@ -62,16 +67,16 @@ text-shadow: 2px 4px 8px rgba(0, 40, 100, 0.4);
 background:#ffffff; border:1.8px solid var(--accent-blue);
 border-radius:20px; padding:5px 15px;
 font-size:.75rem; color:var(--accent-blue); font-weight:700;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
-/* CARDS - ปรับพื้นหลังให้ขาวนวลขึ้นเพื่อตัดกับตัวหนังสือ */
+/* CARDS */
 .card {
 background: var(--card-white);
 backdrop-filter:blur(10px);
 border: 2px solid #ffffff;
 border-radius:24px; padding:22px 20px; margin-bottom:18px;
-box-shadow:0 10px 25px rgba(0, 50, 120, 0.15);
+box-shadow:0 10px 25px rgba(112, 172, 224, 0.12);
 position:relative; overflow:hidden;
 animation:fadeUp .6s ease both;
 }
@@ -84,7 +89,7 @@ animation:fadeUp .6s ease both;
   display:flex; 
   align-items:center; 
   gap:10px;
-  border-bottom: 2px solid #eef7ff;
+  border-bottom: 2px solid #f0f8ff;
   padding-bottom: 8px;
 }
 
@@ -102,7 +107,7 @@ animation:fadeUp .6s ease both;
 .img-box {
 width: 100%; border-radius: 18px; overflow: hidden;
 border: 2px solid #f0f8ff; background: #fff;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 margin-top: 10px;
 }
 .img-box img { width: 100%; height: auto; display: block; }
@@ -111,16 +116,16 @@ margin-top: 10px;
 .cta-wrap { text-align:center; padding:15px 0; }
 .cta-btn {
 display:inline-block; width:100%; max-width:300px;
-background: linear-gradient(135deg, #007bff, #0056b3);
+background: linear-gradient(135deg, #7dbcf5, #5da2e1);
 color:#ffffff; font-family: 'Mitr', sans-serif;
 font-size:1.1rem; font-weight:600; padding:16px;
 border-radius:50px; text-decoration:none;
-box-shadow: 0 10px 20px rgba(0, 80, 200, 0.4);
+box-shadow: 0 10px 20px rgba(125, 188, 245, 0.3);
 transition: all 0.3s;
 }
-.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0, 80, 200, 0.5); }
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(125, 188, 245, 0.4); }
 
-.footer { text-align:center; padding:20px 0; font-size:.8rem; color:#ffffff; font-weight: 500; }
+.footer { text-align:center; padding:20px 0; font-size:.8rem; color:var(--text-highlight); font-weight: 500; opacity: 0.8; }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
 </style>
