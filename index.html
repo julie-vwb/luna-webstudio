@@ -21,7 +21,8 @@
 
 body {
   font-family: 'Mitr', sans-serif;
-  background: linear-gradient(160deg, #e8f2ff 0%, #f0f8ff 50%, #ffffff 100%);
+  /* ปรับโทนสีพื้นหลังให้เป็น ฟ้า-ม่วง ตามที่เคยแจ้งไว้ หรือคงเดิมตามโค้ดที่คุณส่งมา */
+  background: linear-gradient(160deg, #d6eeff 0%, #e8d5f5 50%, #f5d6ff 100%);
   min-height: 100vh;
   color: var(--text);
   overflow-x: hidden;
@@ -48,14 +49,19 @@ pointer-events:none; z-index:0;
 .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
 /* HEADER */
-.header { text-align:center; padding:28px 0 16px; animation:fadeUp .7s ease both; }
+.header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
 .shop-name {
-font-size:1.8rem; font-weight:700;
+font-size:2.4rem; font-weight:700;
 color: #4080c0;
-letter-spacing:1.5px;
+letter-spacing:2px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+text-shadow: 2px 2px 4px rgba(64,128,192,0.15);
 }
-.shop-sub { font-size:.8rem; color:var(--textl); margin-top:5px; line-height:1.7; }
+.shop-sub { font-size:.8rem; color:var(--textl); margin-top:8px; line-height:1.7; }
 
 .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
 .badge {
@@ -114,13 +120,30 @@ box-shadow:0 3px 9px rgba(80,144,208,.25);
 }
 .st { font-size:.84rem; color:var(--text); padding-top:4px; line-height:1.6; }
 
-/* tags */
-.tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
-.tag {
-background:linear-gradient(135deg,#e8f2ff,#f0f8ff);
-border:1px solid rgba(136,184,232,.3); border-radius:12px;
-padding:3px 11px; font-size:.73rem; color:var(--text);
+/* image display */
+.img-container {
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin: 12px 0;
 }
+
+.img-box {
+width: 100%;
+border-radius: 16px;
+overflow: hidden;
+border: 1.5px solid rgba(136,184,232,.3);
+background: #fff;
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.img-box img {
+width: 100%;
+height: auto;
+display: block;
+transition: transform 0.3s;
+}
+.img-box img:hover { transform: scale(1.02); }
 
 /* links */
 .lnk {
@@ -131,58 +154,9 @@ padding:10px 14px; text-decoration:none; color:var(--text);
 font-size:.84rem; transition:all .2s; margin-bottom:9px;
 }
 .lnk:hover { transform:translateX(4px); }
-.lnk:last-child { margin-bottom:0; }
 .lnk-ic { font-size:1.3rem; flex-shrink:0; }
 .lnk-name { font-weight:500; font-size:.88rem; color:var(--blue4); margin-bottom:2px; }
 .lnk-desc { font-size:.75rem; color:var(--textl); }
-
-/* payment */
-.pay-row { display:flex; gap:10px; flex-wrap:wrap; }
-.pay-pill {
-background:linear-gradient(135deg,#f0f8ff,#e8f2ff);
-border:1.5px solid rgba(136,184,232,.25); border-radius:12px;
-padding:8px 14px; font-size:.82rem; color:var(--text);
-display:flex; align-items:center; gap:6px;
-}
-
-/* note */
-.note {
-background:linear-gradient(135deg,#fffef8,#f5fbff);
-border:1.5px solid rgba(136,184,232,.3); border-radius:14px;
-padding:13px 15px; font-size:.83rem; color:var(--text); line-height:1.8;
-}
-
-/* highlight box */
-.hi-box {
-background:linear-gradient(135deg,#88b8e8,#b8d8f5);
-border-radius:16px; padding:13px 16px; color:#fff;
-text-align:center; margin-bottom:12px;
-box-shadow:0 6px 20px rgba(80,144,208,.25);
-}
-.hi-box b { font-size:1.05rem; }
-.hi-box small { font-size:.78rem; opacity:.9; }
-
-/* image display */
-.img-container {
-display: flex;
-flex-direction: column;
-gap: 12px;
-margin: 12px 0;
-}
-
-.img-box {
-width: 100%;
-border-radius: 14px;
-overflow: hidden;
-border: 1.5px solid rgba(136,184,232,.3);
-background: #fff;
-}
-
-.img-box img {
-width: 100%;
-height: auto;
-display: block;
-}
 
 /* CTA */
 .cta-wrap { text-align:center; padding:8px 0; animation:fadeUp .6s .6s ease both; }
@@ -196,17 +170,8 @@ box-shadow:0 8px 24px rgba(80,144,208,.3), inset 0 1px 0 rgba(255,255,255,.3);
 transition:all .3s; animation:glow 3s ease-in-out infinite;
 }
 @keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(80,144,208,.3),inset 0 1px 0 rgba(255,255,255,.3);}50%{box-shadow:0 10px 36px rgba(80,144,208,.5),inset 0 1px 0 rgba(255,255,255,.3);}}
-.cta-btn:hover { transform:translateY(-3px) scale(1.03); }
 
-/* footer */
 .footer { text-align:center; padding:16px 0 8px; font-size:.73rem; color:var(--textl); }
-.socs { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
-.soc {
-background:#fff; border:1.5px solid var(--blue2);
-border-radius:20px; padding:6px 15px;
-font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
-}
-.soc:hover { background:var(--blue1); transform:translateY(-2px); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
 </style>
@@ -221,7 +186,7 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
 
 <div class="wrap">
   <div class="header">
-    <div class="shop-name">Lula 🎨</div>
+    <div class="shop-name">🎀 Lula 🎀</div>
     <div class="shop-sub">
       ✨ chxb.Lu<br>
       รับออกแบบลายน้ำ
@@ -236,14 +201,14 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
   <div class="div">✦ · · ✦ · · ✦</div>
 
   <div class="status-box">
-    <div class="s-open"><span class="s-dot"></span>พร้อมรับออเดอร์อยู่นะค่ะ 💙</div>
+    <div class="s-open"><span class="s-dot"></span>อ่านลายละเอียดแล้วสั่งเข้ามาได้เลยน้า 💙</div>
   </div>
 
   <div class="card">
     <div class="ct"><span class="ic">🎨</span> เกี่ยวกับเรา</div>
     <div style="font-size:.85rem;line-height:1.8;color:#3a5c8a;">
-      ร้านรับออกแบบ <b>ลายน้ำ</b> 🎨 สำหรับตัวอักษรและรูปภาพของคุณ<br><br>
-      เราทำให้ลายน้ำของคุณมีเอกลักษณ์ และสวยงาม พร้อมให้คุณใช้งานได้เลยค่ะ ✨
+      ร้านรับออกแบบ <b>ลายน้ำ</b> 🎨 <br><br>
+      เราทำให้ลายน้ำของคุณน่ารักตรงตามใจ พร้อมให้คุณใช้งานได้เลยค่ะ ✨
     </div>
   </div>
 
@@ -253,13 +218,13 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
       <div>
         <div style="font-size:.9rem;font-weight:600;color:var(--blue4);margin-bottom:8px;">💙 YCH (Versions 1-8)</div>
         <div class="img-box">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="YCH">
+          <img src="banner1.jpg" alt="YCH Portfolio">
         </div>
       </div>
       <div>
         <div style="font-size:.9rem;font-weight:600;color:var(--blue4);margin-bottom:8px;">✨ CMS (Character Design)</div>
         <div class="img-box">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="CMS">
+          <img src="banner2.jpg" alt="CMS Portfolio">
         </div>
       </div>
     </div>
@@ -274,36 +239,6 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
   </div>
 
   <div class="card">
-    <div class="ct"><span class="ic">📝</span> ขั้นตอนการสั่งงาน</div>
-    <div class="steps">
-      <div class="step">
-        <div class="sn">1</div>
-        <div class="st">ติดต่อมาให้รายละเอียดงานที่ต้องการ</div>
-      </div>
-      <div class="step">
-        <div class="sn">2</div>
-        <div class="st">ส่งภาพอักษรหรือรูปภาพที่ต้องการทำลายน้ำ</div>
-      </div>
-      <div class="step">
-        <div class="sn">3</div>
-        <div class="st">แจ้งวัตถุประสงค์การใช้งาน (ส่วนตัว/พาณิชย์)</div>
-      </div>
-      <div class="step">
-        <div class="sn">4</div>
-        <div class="st">ชำระเงิน รอรับงานลายน้ำเสร็จสิ้น</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="ct"><span class="ic">💳</span> ช่องทางชำระเงิน</div>
-    <div class="pay-row">
-      <div class="pay-pill">💳 ธนาคารกสิกร (KBANK)</div>
-      <div class="pay-pill">💚 TrueWallet</div>
-    </div>
-  </div>
-
-  <div class="card">
     <div class="ct"><span class="ic">📱</span> ช่องทางติดต่อ</div>
     <a href="https://www.facebook.com" class="lnk" target="_blank">
       <span class="lnk-ic">👤</span>
@@ -313,25 +248,15 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
       <span class="lnk-ic">📸</span>
       <div><div class="lnk-name">Instagram</div><div class="lnk-desc">@chxb.lu · ดูผลงานได้ที่นี่</div></div>
     </a>
-    <a href="https://x.com" class="lnk" target="_blank">
-      <span class="lnk-ic">𝕏</span>
-      <div><div class="lnk-name">X (Twitter)</div><div class="lnk-desc">@LaLaChxb · ติดตามเรา</div></div>
-    </a>
   </div>
 
   <div class="cta-wrap">
     <a href="https://www.facebook.com" class="cta-btn" target="_blank">
       💙 ติดต่อสั่งงาน
     </a>
-    <div style="font-size:.8rem;color:var(--textl);margin-top:8px;">พร้อมสร้างลายน้ำให้คุณค่ะ!</div>
   </div>
 
   <div class="footer">
-    <div class="socs">
-      <a href="https://www.facebook.com" class="soc" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com" class="soc" target="_blank">Instagram</a>
-      <a href="https://x.com" class="soc" target="_blank">X</a>
-    </div>
     <div>made with 💙 · Lula · ร้านออกแบบลายน้ำ</div>
   </div>
 </div>
